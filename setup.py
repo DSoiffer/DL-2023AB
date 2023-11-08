@@ -1,5 +1,6 @@
 import torch
 import copy
+import time
 
 def abs_activation(x):
     return torch.abs(x)
@@ -74,6 +75,7 @@ def test_loop(dataloader, model, loss_fn, showAcc=True):
 
 def runModel(model, train_dataloader, val_dataloader, test_dataloader, optimizer, loss_fn, showAcc, hyperparameters):
     epochs, batch_size, patience, min_delta = hyperparameters
+    st = time.time()
     early_stopper = EarlyStopper(patience=patience, min_delta=min_delta)
     for e in range(epochs):
         print(f"Epoch {e+1}\n-------------------------------")
@@ -85,10 +87,16 @@ def runModel(model, train_dataloader, val_dataloader, test_dataloader, optimizer
         if early_stopper.early_stop(val_loss, model):             
           model.load_state_dict(early_stopper.min_state_dict)
           break
+    res = (e+1,)
     if showAcc:
       test_loss, test_accuracy = test_loop(test_dataloader, model, loss_fn, showAcc=showAcc)
-      return e+1, test_loss, test_accuracy
+      res += (test_loss,)
+      res += (test_accuracy,)
     else:
         test_loss = test_loop(test_dataloader, model, loss_fn, showAcc=showAcc)
-        return e+1, test_loss
+        res += (test_loss,)
+    et = time.time()
+    elapsed_time = et - st
+    res += (elapsed_time,)
+    return res
    

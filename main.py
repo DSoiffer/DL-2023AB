@@ -28,8 +28,8 @@ optimizerAbs = torch.optim.SGD(absModel.parameters(), lr=learning_rate, weight_d
 optimizerReLU = torch.optim.SGD(reluModel.parameters(), lr=learning_rate, weight_decay=alpha)
 
 
-epochsAbs, lossAbs, accAbs = runModel(absModel, train_dataloader, val_dataloader, test_dataloader, optimizerAbs, loss_fn, True, (epochs, batch_size, 3, .1))
-epochsRelu, lossRelu, accRelu = runModel(reluModel, train_dataloader, val_dataloader, test_dataloader, optimizerReLU, loss_fn, True, (epochs, batch_size, 3, .1))
+epochsAbs, lossAbs, accAbs, timeAbs = runModel(absModel, train_dataloader, val_dataloader, test_dataloader, optimizerAbs, loss_fn, True, (epochs, batch_size, 3, .1))
+epochsRelu, lossRelu, accRelu, timeRelu = runModel(reluModel, train_dataloader, val_dataloader, test_dataloader, optimizerReLU, loss_fn, True, (epochs, batch_size, 3, .1))
 
-print("Abs model results: epochs:",epochsAbs,"loss:", lossAbs, "accuracy:", accAbs*100)
-print("Relu model results: epochs:",epochsRelu,"loss:", lossRelu, "accuracy:", accRelu*100)
+print("Abs model results: epochs:",epochsAbs,"loss:", lossAbs, "accuracy:", accAbs*100, "time:", timeAbs)
+print("Relu model results: epochs:",epochsRelu,"loss:", lossRelu, "accuracy:", accRelu*100, "time", timeRelu)
