@@ -71,9 +71,7 @@ def test_loop(dataloader, model, loss_fn, showAcc=True):
         return test_loss, correct
     print(f"Avg loss: {test_loss:>8f} \n")
     return test_loss
-
-
-def runModel(model, train_dataloader, val_dataloader, test_dataloader, optimizer, loss_fn, showAcc, hyperparameters):
+def runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, showAcc, hyperparameters):
     epochs, batch_size, patience, min_delta = hyperparameters
     st = time.time()
     early_stopper = EarlyStopper(patience=patience, min_delta=min_delta)
@@ -81,22 +79,77 @@ def runModel(model, train_dataloader, val_dataloader, test_dataloader, optimizer
         print(f"Epoch {e+1}\n-------------------------------")
         traj_params = train_loop(train_dataloader, model, loss_fn, optimizer, batch_size)
         if showAcc:
-          val_loss, _ = test_loop(val_dataloader, model, loss_fn, showAcc=showAcc)
+          val_loss, val_accuracy = test_loop(val_dataloader, model, loss_fn, showAcc=showAcc)
         else:
           val_loss = test_loop(val_dataloader, model, loss_fn, showAcc=showAcc)
         if early_stopper.early_stop(val_loss, model):             
           model.load_state_dict(early_stopper.min_state_dict)
           break
     res = (e+1,)
+    res += (val_loss,)
     if showAcc:
-      test_loss, test_accuracy = test_loop(test_dataloader, model, loss_fn, showAcc=showAcc)
-      res += (test_loss,)
-      res += (test_accuracy,)
-    else:
-        test_loss = test_loop(test_dataloader, model, loss_fn, showAcc=showAcc)
-        res += (test_loss,)
+      res += (val_accuracy,)
     et = time.time()
     elapsed_time = et - st
     res += (elapsed_time,)
     return res
+
+def hyper_tuning(model, train_dataloader, val_dataloader, loss_fn, hyperparameters):
+    batch_sizes, learning_rates, alphas, epochs = hyperparameters
+    best_CE = None
+    best_optimizer = None
+    best_set = None
+    best_acc = None
+    best_time = None
+
+    for b in batch_sizes:
+        print("Batch Size: ", b)
+        for l in learning_rates:
+            print("\tLearning Rate: ", l)
+            for a in alphas:
+                print("\t\t\tAlpha: ", a)
+                earlyStopped = False
+                for e in epochs:
+                    if not earlyStopped:
+                        print("\t\tEpochs: ", e)
+                        current = [b, l, a, e]
+                        optimizer = torch.optim.SGD(model.parameters(), lr=l, weight_decay=a, momentum=.5) #TODO momentum hyperparameter?
+                        epochs_ran, loss, acc, time = runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, True, (e, b, 3, .1))
+                        if best_CE is None or best_CE > loss:
+                            best_CE = loss
+                            if epochs_ran < e:
+                                earlyStopped = True
+                                current[3] = epochs_ran
+                            best_optimizer = optimizer
+                            best_set = current
+                            best_acc = acc
+                            best_time = time
+                        
+    return best_CE, best_optimizer, best_set, best_acc, best_time
+# def runModel(model, train_dataloader, val_dataloader, test_dataloader, optimizer, loss_fn, showAcc, hyperparameters):
+#     epochs, batch_size, patience, min_delta = hyperparameters
+#     st = time.time()
+#     early_stopper = EarlyStopper(patience=patience, min_delta=min_delta)
+#     for e in range(epochs):
+#         print(f"Epoch {e+1}\n-------------------------------")
+#         traj_params = train_loop(train_dataloader, model, loss_fn, optimizer, batch_size)
+#         if showAcc:
+#           val_loss, _ = test_loop(val_dataloader, model, loss_fn, showAcc=showAcc)
+#         else:
+#           val_loss = test_loop(val_dataloader, model, loss_fn, showAcc=showAcc)
+#         if early_stopper.early_stop(val_loss, model):             
+#           model.load_state_dict(early_stopper.min_state_dict)
+#           break
+#     res = (e+1,)
+#     if showAcc:
+#       test_loss, test_accuracy = test_loop(test_dataloader, model, loss_fn, showAcc=showAcc)
+#       res += (test_loss,)
+#       res += (test_accuracy,)
+#     else:
+#         test_loss = test_loop(test_dataloader, model, loss_fn, showAcc=showAcc)
+#         res += (test_loss,)
+#     et = time.time()
+#     elapsed_time = et - st
+#     res += (elapsed_time,)
+#     return res
    
