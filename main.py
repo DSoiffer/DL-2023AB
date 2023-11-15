@@ -5,10 +5,13 @@ from torch.utils.data import DataLoader
 from torchvision.transforms import ToTensor
 import numpy as np
 import data_loader.FashionMNIST as FashionMNIST_loader
+import data_loader.CIFAR10 as CIFAR10_loader
 import networks.FashionMNIST as FashionMNIST_networks
+import networks.CIFAR10 as CIFAR10_networks
 from setup import abs_activation, runModel, hyper_tuning, test_loop
 
-training_data, validation_data, test_data = FashionMNIST_loader.load(True)
+#training_data, validation_data, test_data = FashionMNIST_loader.load(True)
+training_data, validation_data, test_data = CIFAR10_loader.load(True)
 learning_rate = 1e-2
 batch_size = 16
 epochs = 1
@@ -20,8 +23,10 @@ val_dataloader = DataLoader(validation_data, batch_size=batch_size, shuffle=True
 test_dataloader = DataLoader(test_data, batch_size=batch_size, shuffle=True)
 
 
-absModel = FashionMNIST_networks.Basic(abs_activation)
-reluModel = FashionMNIST_networks.Basic(nn.ReLU())
+# absModel = FashionMNIST_networks.Basic(abs_activation)
+# reluModel = FashionMNIST_networks.Basic(nn.ReLU())
+absModel = CIFAR10_networks.Standard(abs_activation)
+reluModel = CIFAR10_networks.Standard(nn.ReLU())
 
 loss_fn = nn.CrossEntropyLoss()
 # optimizerAbs = torch.optim.SGD(absModel.parameters(), lr=learning_rate, weight_decay=alpha)
