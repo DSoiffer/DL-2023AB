@@ -1,9 +1,21 @@
 import torch
 import copy
 import time
+import torch.nn as nn
+from torch import Tensor
 
-def abs_activation(x):
-    return torch.abs(x)
+def abs_activation(x, ratio=1):
+    x[x<0] *= -ratio #torch.abs(x)
+    return x
+
+class Abs(nn.Module):
+    def __init__(self, ratio=1):
+        super().__init__()
+        self.ratio = ratio
+    def forward(self, input: Tensor) -> Tensor:
+        # this is in place, might cause issues?
+        input[input<0] *= -self.ratio
+        return input
 
 class EarlyStopper:
     def __init__(self, patience=1, min_delta=0):
