@@ -3,6 +3,8 @@ import copy
 import time
 import torch.nn as nn
 from torch import Tensor
+from torch.utils.data import DataLoader
+
 
 def abs_activation(x, ratio=1):
     x[x<0] *= -ratio #torch.abs(x)
@@ -83,6 +85,7 @@ def test_loop(dataloader, model, loss_fn, showAcc=True):
         return test_loss, correct
     print(f"Avg loss: {test_loss:>8f} \n")
     return test_loss
+
 def runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, showAcc, hyperparameters):
     epochs, batch_size, patience, min_delta = hyperparameters
     st = time.time()
@@ -97,47 +100,49 @@ def runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, showAc
         if early_stopper.early_stop(val_loss, model):             
           model.load_state_dict(early_stopper.min_state_dict)
           break
-    res = (e+1,)
-    res += (val_loss,)
-    if showAcc:
-      res += (val_accuracy,)
     et = time.time()
     elapsed_time = et - st
-    res += (elapsed_time,)
+    res = {
+        'epochs': e+1,
+        'val_loss': val_loss,
+        'elapsed_time': elapsed_time
+    }
+    if showAcc:
+      res['val_accuracy'] = val_accuracy
     return res
 
-def hyper_tuning(model, train_dataloader, val_dataloader, loss_fn, hyperparameters):
+def hyper_tuning(model, train_data, val_data, loss_fn, hyperparameters):
     batch_sizes, learning_rates, alphas, epochs = hyperparameters
     best_CE = None
-    best_optimizer = None
+    best_res = None
     best_set = None
-    best_acc = None
-    best_time = None
 
     for b in batch_sizes:
         print("Batch Size: ", b)
+        train_dataloader = DataLoader(train_data, batch_size=b)
+        val_dataloader = DataLoader(val_data, batch_size=b)
         for l in learning_rates:
             print("\tLearning Rate: ", l)
             for a in alphas:
-                print("\t\t\tAlpha: ", a)
+                print("\t\tAlpha: ", a)
                 earlyStopped = False
                 for e in epochs:
                     if not earlyStopped:
-                        print("\t\tEpochs: ", e)
-                        current = [b, l, a, e]
+                        print("\t\t\tEpochs: ", e)
+                        current = {'batch_size': b, 'learning_rate': l, 'alpha': a, 'epochs': e}
                         optimizer = torch.optim.SGD(model.parameters(), lr=l, weight_decay=a, momentum=.5) #TODO momentum hyperparameter?
-                        epochs_ran, loss, acc, time = runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, True, (e, b, 3, .1))
-                        if best_CE is None or best_CE > loss:
+                        # TODO auto defining patience and min delta
+                        modelRes = runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, True, (e, b, 3, .1))
+                        epochs_ran = modelRes['epochs']
+                        loss = modelRes['val_loss']
+                        if best_CE is None or best_CE > loss: # found better model
                             best_CE = loss
-                            if epochs_ran < e:
+                            if epochs_ran < e: # if performs better at an earlier epoch, start early
                                 earlyStopped = True
                                 current[3] = epochs_ran
-                            best_optimizer = optimizer
                             best_set = current
-                            best_acc = acc
-                            best_time = time
-                        
-    return best_CE, best_optimizer, best_set, best_acc, best_time
+                            best_res = modelRes
+    return best_res, best_set
 # def runModel(model, train_dataloader, val_dataloader, test_dataloader, optimizer, loss_fn, showAcc, hyperparameters):
 #     epochs, batch_size, patience, min_delta = hyperparameters
 #     st = time.time()
