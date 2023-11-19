@@ -2,69 +2,69 @@
   "abs": {
     "hypertuned": {
       "hyper": {
-        "batch_size": 16,
+        "batch_size": 32,
         "learning_rate": 0.0001,
-        "alpha": 0.001,
-        "epochs": 1
+        "alpha": 0.01,
+        "epochs": 50
       },
       "model results": {
-        "epochs": 1,
-        "val_loss": 2.3049562404404824,
-        "elapsed_time": 32.381898164749146,
-        "val_accuracy": 0.10093333333333333
+        "epochs": 50,
+        "val_loss": 1.019624411806147,
+        "elapsed_time": 1322.007199048996,
+        "val_accuracy": 0.6394666666666666
       },
-      "loss": 2.303379393005371,
-      "accuracy": 10.13
+      "loss": 1.1843230377751799,
+      "accuracy": 57.599999999999994
     },
     "otherHypertuned": {
       "hyper": {
-        "batch_size": 16,
+        "batch_size": 32,
         "learning_rate": 0.0001,
-        "alpha": 0.001,
-        "epochs": 1
+        "alpha": 0.01,
+        "epochs": 50
       },
       "model results": {
-        "epochs": 1,
-        "val_loss": 2.3013054257008565,
-        "elapsed_time": 32.843005895614624,
-        "val_accuracy": 0.1056
+        "epochs": 50,
+        "val_loss": 0.9929386354507284,
+        "elapsed_time": 1560.7544379234314,
+        "val_accuracy": 0.6493333333333333
       },
-      "loss": 2.3037146339416505,
-      "accuracy": 10.0
+      "loss": 0.9824210946171429,
+      "accuracy": 66.0
     }
   },
   "relu": {
     "hypertuned": {
       "hyper": {
-        "batch_size": 16,
+        "batch_size": 32,
         "learning_rate": 0.0001,
-        "alpha": 0.001,
-        "epochs": 1
+        "alpha": 0.01,
+        "epochs": 50
       },
       "model results": {
-        "epochs": 1,
-        "val_loss": 2.3038185506995554,
-        "elapsed_time": 17.473543882369995,
-        "val_accuracy": 0.10026666666666667
+        "epochs": 50,
+        "val_loss": 1.0291102586908543,
+        "elapsed_time": 842.7583720684052,
+        "val_accuracy": 0.6454666666666666
       },
-      "loss": 2.303974899291992,
-      "accuracy": 10.0
+      "loss": 1.0891578963008552,
+      "accuracy": 61.62
     },
     "otherHypertuned": {
       "hyper": {
-        "batch_size": 16,
+        "batch_size": 32,
         "learning_rate": 0.0001,
-        "alpha": 0.001,
-        "epochs": 1
+        "alpha": 0.01,
+        "epochs": 50
       },
       "model results": {
-        "epochs": 1,
-        "val_loss": 2.303570502348292,
-        "elapsed_time": 16.683337926864624,
-        "val_accuracy": 0.10026666666666667
+        "epochs": 50,
+        "val_loss": 1.0063143477794971,
+        "elapsed_time": 900.5546391010284,
+        "val_accuracy": 0.6553333333333333
       },
-      "loss": 2.3037146339416505,
-      "accuracy": 10.0
+      "loss": 0.9824210946171429,
+      "accuracy": 66.0
     }
   }
 }
