@@ -3,8 +3,9 @@ import copy
 import time
 import torch.nn as nn
 from torch import Tensor
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, TensorDataset
 import matplotlib.pyplot as plt
+from sklearn.base import BaseEstimator
 
 
 def abs_activation(x, ratio=1):
@@ -40,7 +41,8 @@ class EarlyStopper:
         return False
     
 def train_loop(dataloader, model, loss_fn, optimizer, batch_size):
-    size = len(dataloader.dataset)
+    size = 0
+    total_loss = 0
     # Set the model to training mode - important for batch normalization and dropout layers
     # Unnecessary in this situation but added for best practices
     model.train()
@@ -54,11 +56,13 @@ def train_loop(dataloader, model, loss_fn, optimizer, batch_size):
         optimizer.step()
         # Reset gradients to 0, since this is not done automatically
         optimizer.zero_grad()
+        total_loss += loss.item()
+        size += 1
 
-        if batch % (150*64/batch_size) == 0:
-            loss, current = loss.item(), (batch + 1) * len(X)
-            print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
-    return loss.item()
+        # if batch % (150*64/batch_size) == 0:
+        #     loss, current = loss.item(), (batch + 1) * len(X)
+        #     print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
+    return total_loss/size
 
     
 
@@ -83,10 +87,11 @@ def test_loop(dataloader, model, loss_fn, show_acc=True):
     test_loss /= num_batches
     if show_acc:
         correct /= size
-        print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
+        print(f"Test Error: Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f}")
         return test_loss, correct
-    print(f"Avg loss: {test_loss:>8f} \n")
-    return test_loss
+    else: 
+        print(f"Test Error: Avg loss: {test_loss:>8f}")
+        return test_loss
 
 def runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, hyperparameters, show_acc=True):
     epochs, batch_size, patience, min_delta = hyperparameters
@@ -120,6 +125,45 @@ def runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, hyperp
       res['val_accuracies'] = val_accuracies
     return res
 
+class PyTorchClassifier(BaseEstimator):
+    def __init__(self, model, batch_size, learning_rate, alpha, epochs, momentum, patience, min_delta):
+        #self.model = model(input_size, hidden_size, output_size)
+        self.model = model
+        self.batch_size = batch_size
+        self.learning_rate = learning_rate
+        self.alpha = alpha
+        self.epochs = epochs
+        self.momentum = momentum
+        self.patience = patience
+        self.min_delta = min_delta
+
+    def fit(self, X, y):
+        # Create a DataLoader for batching
+        X_tensor = torch.Tensor(X)
+        y_tensor = torch.Tensor(y)
+        dataset = TensorDataset(X_tensor, y_tensor)
+        dataloader = DataLoader(dataset, batch_size=self.batch_size, shuffle=True)
+        loss_fn = nn.CrossEntropyLoss()
+        optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate, weight_decay=self.alpha, momentum=self.momentum)
+        for epoch in range(self.epochs):
+            for inputs, labels in dataloader:
+                optimizer.zero_grad()
+                outputs = self.model(inputs)
+                loss = loss_fn(outputs, labels.long())
+                loss.backward()
+                optimizer.step()
+
+    def predict(self, X):
+        # Convert data to PyTorch tensor
+        X_tensor = torch.Tensor(X)
+
+        # Make predictions
+        with torch.no_grad():
+            outputs = self.model(X_tensor)
+            _, predicted = torch.max(outputs, 1)
+
+        return predicted.numpy()
+    
 def hyper_tuning(model, train_data, val_data, loss_fn, hyperparameters, show_acc=True):
     batch_sizes, learning_rates, alphas, epochs = hyperparameters
     best_CE = None
@@ -154,7 +198,7 @@ def hyper_tuning(model, train_data, val_data, loss_fn, hyperparameters, show_acc
     return best_res, best_set
 
 # lossDict is a dictionary of keys that correspond to labels and values that are arrays
-def plot(lossDict):
+def plot(lossDict, title):
     # Plot the lines
     for key, value in lossDict.items():
         plt.plot(value, label=key)
@@ -162,7 +206,7 @@ def plot(lossDict):
     # Add labels and title
     plt.xlabel('Epochs')
     plt.ylabel('Losses')
-    plt.title('Losses Over Epochs')
+    plt.title(title + ' Losses Over Epochs')
     # Add legend
     plt.legend()
     # Show the plot
