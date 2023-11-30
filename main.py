@@ -46,8 +46,10 @@ param_grid = {
     'batch_size': [64, 128],
     'learning_rate': [0.001, 0.01],
     'alpha': [0.0001, 0.001],
-    'epochs': [30, 50],
-    'momentum': [.5]
+    'epochs': [1, 50],
+    'momentum': [.5],
+    'patience': [3],
+    'min_delta': [.1]
 }
 
 
@@ -77,10 +79,8 @@ show_acc = options[data]['show_acc']
 
 loss_fn = nn.CrossEntropyLoss() # TODO do we need to have the ability to change this? do this every time
 
-print("Here2")
 # potential speed up
 if torch.cuda.is_available(): 
-  print("HEre")
   dev = "cuda:0" 
 else: 
   dev = "cpu" 
@@ -105,27 +105,27 @@ train_dataloader = DataLoader(training_data, batch_size=hyper_abs['batch_size'])
 val_dataloader = DataLoader(validation_data, batch_size=hyper_abs['batch_size'])
 test_dataloader = DataLoader(test_data, batch_size=hyper_abs['batch_size'])
 optimizer = torch.optim.SGD(absModel.parameters(), lr=hyper_abs['learning_rate'], weight_decay=hyper_abs['alpha'], momentum=hyper_abs['momentum'])
-resAbs2 = runModel(absModel, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_abs['epochs'], hyper_abs['batch_size'], 3, .1), show_acc)
+resAbs = runModel(absModel, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_abs['epochs'], hyper_abs['batch_size'], 3, .1), show_acc)
 if show_acc:
-  lossAbs2, accAbs2 = test_loop(test_dataloader, absModel, loss_fn, show_acc)
-  print("Abs model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resAbs2, "\nloss:", lossAbs2, "accuracy:", accAbs2*100)
+  lossAbs, accAbs = test_loop(test_dataloader, absModel, loss_fn, show_acc)
+  print("Abs model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resAbs, "\nloss:", lossAbs, "accuracy:", accAbs*100)
 else:
-  lossAbs2 = test_loop(test_dataloader, absModel, loss_fn, show_acc)
-  print("Abs model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resAbs2, "\nloss:", lossAbs2)
+  lossAbs = test_loop(test_dataloader, absModel, loss_fn, show_acc)
+  print("Abs model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resAbs, "\nloss:", lossAbs)
 
-# running abs using best of relu
+# # running abs using best of relu
 loss_fn = nn.CrossEntropyLoss()
 train_dataloader = DataLoader(training_data, batch_size=hyper_relu['batch_size']) 
 val_dataloader = DataLoader(validation_data, batch_size=hyper_relu['batch_size'])
 test_dataloader = DataLoader(test_data, batch_size=hyper_relu['batch_size'])
 optimizer = torch.optim.SGD(absModel2.parameters(), lr=hyper_relu['learning_rate'], weight_decay=hyper_relu['alpha'], momentum=hyper_relu['momentum'])
-resAbs = runModel(absModel2, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_relu['epochs'], hyper_relu['batch_size'], 3, .1), show_acc)
+resAbs2 = runModel(absModel2, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_relu['epochs'], hyper_relu['batch_size'], 3, .1), show_acc)
 if show_acc:
-  lossAbs, accAbs = test_loop(test_dataloader, absModel, loss_fn, show_acc)
-  print("Abs model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resAbs, "\nloss:", lossAbs, "accuracy:", accAbs*100)
+  lossAbs2, accAbs2 = test_loop(test_dataloader, absModel, loss_fn, show_acc)
+  print("Abs model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resAbs2, "\nloss:", lossAbs2, "accuracy:", accAbs2*100)
 else:
-  lossAbs = test_loop(test_dataloader, absModel, loss_fn, show_acc)
-  print("Abs model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resAbs, "\nloss:", lossAbs)
+  lossAb2s = test_loop(test_dataloader, absModel, loss_fn, show_acc)
+  print("Abs model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resAbs2, "\nloss:", lossAbs2)
 
 
 # running relu using best of relu
@@ -142,7 +142,6 @@ else:
   lossRelu = test_loop(test_dataloader, reluModel, loss_fn, show_acc)
   print("Relu model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resRelu, "\nloss:", lossRelu)
 
-#TODO issue with this already being trained
 # running relu using best of abs
 loss_fn = nn.CrossEntropyLoss()
 train_dataloader = DataLoader(training_data, batch_size=hyper_abs['batch_size']) 
