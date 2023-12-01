@@ -34,6 +34,14 @@ options = {
       'standard': CIFAR10_networks.Standard
     },
     'show_acc': True
+  },
+  "CIFAR100": {
+    'loader': CIFAR100_loader,
+    'models': {
+      'conv2': CIFAR100_networks.Conv2,
+      'basic': CIFAR100_networks.Basic
+    },
+    'show_acc': True
   }
 }
 
@@ -43,10 +51,10 @@ model = 'deep'
 out_file = 'res/FashionMNIST_deep.json'
 
 param_grid = {
-    'batch_size': [64, 128],
+    'batch_size': [32, 64, 128],
     'learning_rate': [0.001, 0.01],
     'alpha': [0.0001, 0.001],
-    'epochs': [1, 50],
+    'epochs': [30,50],
     'momentum': [.5],
     'patience': [3],
     'min_delta': [.1]
