@@ -1,19 +1,21 @@
 import torch
 from torchvision import datasets
-from torchvision.transforms import ToTensor
-
+import torchvision.transforms as transforms
 def load(validation = True):
   training_data = datasets.CIFAR100(
     root="data/CIFAR100",
     train=True,
     download=True,
-    transform=ToTensor()
+    transform=transforms.Compose(
+        [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
   )
   test_data = datasets.CIFAR100(
       root="data/CIFAR100",
       train=False,
       download=True,
-      transform=ToTensor()
+      transform= transforms.Compose(
+        [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
+    )
   )
 
   # Split into training and validation sets

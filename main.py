@@ -12,9 +12,11 @@ import pandas as pd
 
 import data_loader.FashionMNIST as FashionMNIST_loader
 import data_loader.CIFAR10 as CIFAR10_loader
+import data_loader.CIFAR100 as CIFAR100_loader
 import networks.FashionMNIST as FashionMNIST_networks
 import networks.CIFAR10 as CIFAR10_networks
-from setup import abs_activation, runModel, hyper_tuning, test_loop, plot, PyTorchClassifier
+import networks.CIFAR100 as CIFAR100_networks
+from setup import abs_activation, run_model, hyper_tuning, test_loop, plot, PyTorchClassifier
 
 # the options we have so far 
 # TODO move to another file?
@@ -46,15 +48,15 @@ options = {
 }
 
 # define what you're choosing here
-data = 'FashionMNIST'
-model = 'deep'
-out_file = 'res/FashionMNIST_deep.json'
+data = 'CIFAR100'
+model = 'conv2'
+out_file_format = 'res/CIFAR100_Conv20'
 
 param_grid = {
     'batch_size': [32, 64, 128],
     'learning_rate': [0.001, 0.01],
     'alpha': [0.0001, 0.001],
-    'epochs': [30,50],
+    'epochs': [30, 50],
     'momentum': [.5],
     'patience': [3],
     'min_delta': [.1]
@@ -113,7 +115,7 @@ train_dataloader = DataLoader(training_data, batch_size=hyper_abs['batch_size'])
 val_dataloader = DataLoader(validation_data, batch_size=hyper_abs['batch_size'])
 test_dataloader = DataLoader(test_data, batch_size=hyper_abs['batch_size'])
 optimizer = torch.optim.SGD(absModel.parameters(), lr=hyper_abs['learning_rate'], weight_decay=hyper_abs['alpha'], momentum=hyper_abs['momentum'])
-resAbs = runModel(absModel, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_abs['epochs'], hyper_abs['batch_size'], 3, .1), show_acc)
+resAbs = run_model(absModel, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_abs['epochs'], hyper_abs['batch_size'], 3, .1), show_acc)
 if show_acc:
   lossAbs, accAbs = test_loop(test_dataloader, absModel, loss_fn, show_acc)
   print("Abs model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resAbs, "\nloss:", lossAbs, "accuracy:", accAbs*100)
@@ -122,18 +124,19 @@ else:
   print("Abs model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resAbs, "\nloss:", lossAbs)
 
 # # running abs using best of relu
-loss_fn = nn.CrossEntropyLoss()
-train_dataloader = DataLoader(training_data, batch_size=hyper_relu['batch_size']) 
-val_dataloader = DataLoader(validation_data, batch_size=hyper_relu['batch_size'])
-test_dataloader = DataLoader(test_data, batch_size=hyper_relu['batch_size'])
-optimizer = torch.optim.SGD(absModel2.parameters(), lr=hyper_relu['learning_rate'], weight_decay=hyper_relu['alpha'], momentum=hyper_relu['momentum'])
-resAbs2 = runModel(absModel2, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_relu['epochs'], hyper_relu['batch_size'], 3, .1), show_acc)
-if show_acc:
-  lossAbs2, accAbs2 = test_loop(test_dataloader, absModel, loss_fn, show_acc)
-  print("Abs model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resAbs2, "\nloss:", lossAbs2, "accuracy:", accAbs2*100)
-else:
-  lossAb2s = test_loop(test_dataloader, absModel, loss_fn, show_acc)
-  print("Abs model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resAbs2, "\nloss:", lossAbs2)
+if hyper_abs != hyper_relu:
+  loss_fn = nn.CrossEntropyLoss()
+  train_dataloader = DataLoader(training_data, batch_size=hyper_relu['batch_size']) 
+  val_dataloader = DataLoader(validation_data, batch_size=hyper_relu['batch_size'])
+  test_dataloader = DataLoader(test_data, batch_size=hyper_relu['batch_size'])
+  optimizer = torch.optim.SGD(absModel2.parameters(), lr=hyper_relu['learning_rate'], weight_decay=hyper_relu['alpha'], momentum=hyper_relu['momentum'])
+  resAbs2 = run_model(absModel2, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_relu['epochs'], hyper_relu['batch_size'], 3, .1), show_acc)
+  if show_acc:
+    lossAbs2, accAbs2 = test_loop(test_dataloader, absModel, loss_fn, show_acc)
+    print("Abs model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resAbs2, "\nloss:", lossAbs2, "accuracy:", accAbs2*100)
+  else:
+    lossAbs2 = test_loop(test_dataloader, absModel, loss_fn, show_acc)
+    print("Abs model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resAbs2, "\nloss:", lossAbs2)
 
 
 # running relu using best of relu
@@ -142,7 +145,7 @@ train_dataloader = DataLoader(training_data, batch_size=hyper_relu['batch_size']
 val_dataloader = DataLoader(validation_data, batch_size=hyper_relu['batch_size'])
 test_dataloader = DataLoader(test_data, batch_size=hyper_relu['batch_size'])
 optimizer = torch.optim.SGD(reluModel.parameters(), lr=hyper_relu['learning_rate'], weight_decay=hyper_relu['alpha'], momentum=hyper_relu['momentum'])
-resRelu = runModel(reluModel, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_relu['epochs'], hyper_relu['batch_size'], 3, .1), show_acc)
+resRelu = run_model(reluModel, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_relu['epochs'], hyper_relu['batch_size'], 3, .1), show_acc)
 if show_acc:
   lossRelu, accRelu = test_loop(test_dataloader, reluModel, loss_fn, show_acc)
   print("Relu model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resRelu, "\nloss:", lossRelu, "accuracy:", accRelu*100)
@@ -151,34 +154,28 @@ else:
   print("Relu model based off of relu hyperparams: hyperparams:",hyper_relu, "\nmodel results:", resRelu, "\nloss:", lossRelu)
 
 # running relu using best of abs
-loss_fn = nn.CrossEntropyLoss()
-train_dataloader = DataLoader(training_data, batch_size=hyper_abs['batch_size']) 
-val_dataloader = DataLoader(validation_data, batch_size=hyper_abs['batch_size'])
-test_dataloader = DataLoader(test_data, batch_size=hyper_abs['batch_size'])
-optimizer = torch.optim.SGD(reluModel2.parameters(), lr=hyper_abs['learning_rate'], weight_decay=hyper_abs['alpha'], momentum=hyper_abs['momentum'])
-resRelu2 = runModel(reluModel2, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_abs['epochs'], hyper_abs['batch_size'], 3, .1), show_acc)
-if show_acc:
-  lossRelu2, accRelu2 = test_loop(test_dataloader, reluModel, loss_fn, show_acc)
-  print("Relu model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resRelu2, "\nloss:", lossRelu2, "accuracy:", accRelu2*100)
-else:
-  lossRelu2 = test_loop(test_dataloader, reluModel, loss_fn, show_acc)
-  print("Relu model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resRelu2, "\nloss:", lossRelu2)
+if hyper_abs != hyper_relu:
+  loss_fn = nn.CrossEntropyLoss()
+  train_dataloader = DataLoader(training_data, batch_size=hyper_abs['batch_size']) 
+  val_dataloader = DataLoader(validation_data, batch_size=hyper_abs['batch_size'])
+  test_dataloader = DataLoader(test_data, batch_size=hyper_abs['batch_size'])
+  optimizer = torch.optim.SGD(reluModel2.parameters(), lr=hyper_abs['learning_rate'], weight_decay=hyper_abs['alpha'], momentum=hyper_abs['momentum'])
+  resRelu2 = run_model(reluModel2, train_dataloader, val_dataloader, optimizer, loss_fn, (hyper_abs['epochs'], hyper_abs['batch_size'], 3, .1), show_acc)
+  if show_acc:
+    lossRelu2, accRelu2 = test_loop(test_dataloader, reluModel, loss_fn, show_acc)
+    print("Relu model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resRelu2, "\nloss:", lossRelu2, "accuracy:", accRelu2*100)
+  else:
+    lossRelu2 = test_loop(test_dataloader, reluModel, loss_fn, show_acc)
+    print("Relu model based off of abs hyperparams: hyperparams:",hyper_abs, "\nmodel results:", resRelu2, "\nloss:", lossRelu2)
 
-
-fileRes = {
+fileRes =  {
   'abs': {
-    'hypertuned': {
-      'hyper': hyper_abs,
-      'model results': resAbs,
-      'loss': lossAbs,
-      'accuracy': None if not show_acc else accAbs * 100
-    },
-    'otherHypertuned': {
-      'hyper': hyper_relu,
-      'model results': resAbs2,
-      'loss': lossAbs2,
-      'accuracy': None if not show_acc else accAbs2 * 100
-    }
+      'hypertuned': {
+        'hyper': hyper_abs,
+        'model results': resAbs,
+        'loss': lossAbs,
+        'accuracy': None if not show_acc else accAbs * 100
+      },
   },
   'relu': {
     'hypertuned': {
@@ -187,27 +184,45 @@ fileRes = {
       'loss': lossRelu,
       'accuracy': None if not show_acc else accRelu * 100
     },
-    'otherHypertuned': {
-      'hyper': hyper_abs,
-      'model results': resRelu2,
-      'loss': lossRelu2,
-      'accuracy': None if not show_acc else accRelu2 * 100
-    }
   }
 }
-with open(out_file, 'w') as f:
+if hyper_abs != hyper_relu:
+  fileRes['abs']['otherHypertuned'] = {
+    'hyper': hyper_relu,
+    'model results': resAbs2,
+    'loss': lossAbs2,
+    'accuracy': None if not show_acc else accAbs2 * 100
+  }
+  fileRes['relu']['otherHypertuned'] = {
+    'hyper': hyper_abs,
+    'model results': resRelu2,
+    'loss': lossRelu2,
+    'accuracy': None if not show_acc else accRelu2 * 100
+  }
+    
+  
+
+with open(out_file_format + ".json", 'w') as f:
   json.dump(fileRes, f)
 
+if hyper_abs != hyper_relu:
+  lossDict = {
+    'abs hyp trn' : resAbs['train_losses'],
+    'abs hyp val' : resAbs['val_losses'],
+    'relu hyp trn' : resRelu['train_losses'],
+    'relu hyp val' : resRelu['val_losses'],
+    'abs noth trn' : resAbs2['train_losses'],
+    'abs noth val' : resAbs2['val_losses'],
+    'relu noth trn' : resRelu2['train_losses'],
+    'relu noth val' : resRelu2['val_losses'],
+  }
+else: 
+  lossDict = {
+    'abs hyp trn' : resAbs['train_losses'],
+    'abs hyp val' : resAbs['val_losses'],
+    'relu hyp trn' : resRelu['train_losses'],
+    'relu hyp val' : resRelu['val_losses']
+  }
 
-lossDict = {
-  'abs hyp trn' : resAbs['train_losses'],
-  'abs hyp val' : resAbs['val_losses'],
-  'relu hyp trn' : resRelu['train_losses'],
-  'relu hyp val' : resRelu['val_losses'],
-  'abs noth trn' : resAbs2['train_losses'],
-  'abs noth val' : resAbs2['val_losses'],
-  'relu noth trn' : resRelu2['train_losses'],
-  'relu noth val' : resRelu2['val_losses'],
-}
 
-plot(lossDict, data + " " + model)
+plot(lossDict, data + " " + model, out_file_format)

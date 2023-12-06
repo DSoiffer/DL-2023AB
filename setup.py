@@ -93,7 +93,7 @@ def test_loop(dataloader, model, loss_fn, show_acc=True):
         print(f"Test Error: Avg loss: {test_loss:>8f}")
         return test_loss
 
-def runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, hyperparameters, show_acc=True):
+def run_model(model, train_dataloader, val_dataloader, optimizer, loss_fn, hyperparameters, show_acc=True):
     epochs, batch_size, patience, min_delta = hyperparameters
     st = time.time()
     early_stopper = EarlyStopper(patience=patience, min_delta=min_delta)
@@ -185,7 +185,7 @@ def hyper_tuning(model, train_data, val_data, loss_fn, hyperparameters, show_acc
                         current = {'batch_size': b, 'learning_rate': l, 'alpha': a, 'epochs': e}
                         optimizer = torch.optim.SGD(model.parameters(), lr=l, weight_decay=a, momentum=.5) #TODO momentum hyperparameter?
                         # TODO auto defining patience and min delta
-                        modelRes = runModel(model, train_dataloader, val_dataloader, optimizer, loss_fn, (e, b, 3, .1), show_acc)
+                        modelRes = run_model(model, train_dataloader, val_dataloader, optimizer, loss_fn, (e, b, 3, .1), show_acc)
                         epochs_ran = modelRes['epochs']
                         loss = modelRes['val_losses'][-1]
                         if best_CE is None or best_CE > loss: # found better model
@@ -198,7 +198,7 @@ def hyper_tuning(model, train_data, val_data, loss_fn, hyperparameters, show_acc
     return best_res, best_set
 
 # lossDict is a dictionary of keys that correspond to labels and values that are arrays
-def plot(lossDict, title):
+def plot(lossDict, title, out_file_format):
     # Plot the lines
     for key, value in lossDict.items():
         plt.plot(value, label=key)
@@ -209,5 +209,6 @@ def plot(lossDict, title):
     plt.title(title + ' Losses Over Epochs')
     # Add legend
     plt.legend()
+    plt.savefig(out_file_format +".png")
     # Show the plot
     plt.show()
