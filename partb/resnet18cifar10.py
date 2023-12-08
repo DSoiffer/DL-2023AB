@@ -4,8 +4,9 @@ from torchvision import datasets, transforms
 import torch.nn as nn
 import copy
 
-from shared import replace_relu_with, Abs
+from shared import replace_relu_with, Abs, train
 from relu_fine_tune import relu_fine_tune
+from abs_fine_tune import abs_fine_tune
 from prune import prune_models
 from abs_convert import abs_convert
 
@@ -64,20 +65,35 @@ data = get_data(augmentation=1)
 # relu_state = relu_fine_tune(model, device, data, "resnet18 cifar10 relu", output_path)
 
 # converting to abs
-# relu_state = torch.load(output_path + "relu_model.pkl", map_location=torch.device('cuda'))
-# abs_state = copy.deepcopy(relu_state)
-# abs_model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
-# abs_model.fc = nn.Linear(512, 10)
-# abs_convert(abs_model, device, abs_state, data, "resnet18 cifar10 abs percent", output_path)
+relu_state = torch.load(output_path + "relu_model.pkl", map_location=torch.device('cuda'))
+abs_state = copy.deepcopy(relu_state)
+abs_model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
+abs_model.fc = nn.Linear(512, 10)
+abs_convert(abs_model, device, abs_state, data, "resnet18 cifar10 abs percent", output_path)
 
+'''
+# training final abs
+#abs_model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
+#abs_model.fc = nn.Linear(512, 10)
+abs_state = torch.load(output_path + "abs_model2.pkl", map_location=torch.device('cuda'))
+abs_model = abs_state['model']
+#replace_relu_with(abs_model, nn.ReLU, Abs(ratio=1))
+#replace_relu_with(abs_model, Abs, nn.ReLU())
+#print(abs_model)
+abs_fine_tune(abs_model, device, data, "resnet18 cifar10 abs", output_path)
+'''
 # pruning relu/abs
 relu_model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
 relu_model.fc = nn.Linear(512, 10)
-relu_state = torch.load(output_path + "relu_model.pkl", map_location=torch.device('gpu'))
-abs_model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
-abs_model.fc = nn.Linear(512, 10)
-abs_state = torch.load(output_path + "abs_model.pkl", map_location=torch.device('gpu'))
-replace_relu_with(abs_model, nn.ReLU, Abs(ratio=1))
-min_relu_acc = relu_state['test_accuracy'] - .01
-min_abs_acc = abs_state['test_accuracy'] - .01
-prune_models(device, relu_model, relu_state, abs_model, abs_state, data, "Losses after successive pruning", output_path + "pruning.png", min_relu_acc=min_relu_acc, min_abs_acc=min_abs_acc, iterations=10)
+relu_state = torch.load(output_path + "relu_model.pkl", map_location=torch.device('cuda'))
+relu_state['epoch']=0
+#relu_state = train(relu_model, device, data['train'], data['test'], epochs=1, gamma=.85, lr=.001, print_every=100, state=relu_state)
+#abs_model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
+#abs_model.fc = nn.Linear(512, 10)
+abs_state = torch.load(output_path + "abs_model2.pkl", map_location=torch.device('cuda'))
+abs_model = abs_state['model']
+#replace_relu_with(abs_model, nn.ReLU, Abs(ratio=1))
+min_relu_acc = relu_state['test_accuracy'] - .03
+min_abs_acc = abs_state['test_accuracy'] - .03
+prune_models(device, relu_model, relu_state, abs_model, abs_state, data, "Losses after successive pruning", output_path + "pruning.png", prune_amt=0.1, min_relu_acc=min_relu_acc, min_abs_acc=min_abs_acc, iterations=10)
+
