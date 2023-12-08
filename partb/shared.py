@@ -22,7 +22,6 @@ def train(net, device, train_dataloader, val_dataloader, epochs=1, start_epoch=0
       start_epoch = state['epoch']
       losses = state['losses']
       val_losses = state['test_losses']
-
   # Fast forward lr schedule through already trained epochs
   for epoch in range(start_epoch):
     if epoch in schedule:
@@ -74,7 +73,7 @@ def train(net, device, train_dataloader, val_dataloader, epochs=1, start_epoch=0
     scheduler.step() # decreasing learning rate
   val_accuracy = accuracy(net, device, val_dataloader)
   print("Test accuracy: %f" % val_accuracy)
-  state = {'epoch': epoch+1, 'net': net.state_dict(), 'optimizer': optimizer.state_dict(), 'losses': losses, 'test_losses': val_losses, 'test_accuracy': val_accuracy}
+  state = {'epoch': epoch+1, 'model': net, 'net': net.state_dict(), 'optimizer': optimizer.state_dict(), 'losses': losses, 'test_losses': val_losses, 'test_accuracy': val_accuracy}
   if output_file:
       torch.save(state, output_file)
   return state
