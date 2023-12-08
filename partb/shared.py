@@ -64,7 +64,7 @@ def train(net, device, train_dataloader, val_dataloader, epochs=1, start_epoch=0
             print_amt_losses = 0
     losses.append(sum_loss/amt_losses)
     # getting validation results
-    val_loss = custom_loss(net, criterion, val_dataloader)
+    val_loss = custom_loss(net, device, criterion, val_dataloader)
     net.train()
     print("Validation loss: %f" % val_loss)
     val_losses.append(val_loss)
@@ -72,7 +72,7 @@ def train(net, device, train_dataloader, val_dataloader, epochs=1, start_epoch=0
         state = {'epoch': epoch+1, 'net': net.state_dict(), 'optimizer': optimizer.state_dict(), 'losses': losses, 'test_losses': val_losses}
         torch.save(state, checkpoint_path + 'checkpoint-%d.pkl'%(epoch+1))
     scheduler.step() # decreasing learning rate
-  val_accuracy = accuracy(net, val_dataloader)
+  val_accuracy = accuracy(net, device, val_dataloader)
   print("Test accuracy: %f" % val_accuracy)
   state = {'epoch': epoch+1, 'net': net.state_dict(), 'optimizer': optimizer.state_dict(), 'losses': losses, 'test_losses': val_losses, 'test_accuracy': val_accuracy}
   if output_file:

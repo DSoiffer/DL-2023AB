@@ -11,7 +11,7 @@ from abs_convert import abs_convert
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-#if torch.backends.mps.is_available():
+# if torch.backends.mps.is_available():
 #    device = torch.device("mps")
 print(device)
 
@@ -73,10 +73,10 @@ data = get_data(augmentation=1)
 # pruning relu/abs
 relu_model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
 relu_model.fc = nn.Linear(512, 10)
-relu_state = torch.load(output_path + "relu_model.pkl", map_location=torch.device('cpu'))
+relu_state = torch.load(output_path + "relu_model.pkl", map_location=torch.device('gpu'))
 abs_model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
 abs_model.fc = nn.Linear(512, 10)
-abs_state = torch.load(output_path + "abs_model.pkl", map_location=torch.device('cpu'))
+abs_state = torch.load(output_path + "abs_model.pkl", map_location=torch.device('gpu'))
 replace_relu_with(abs_model, nn.ReLU, Abs(ratio=1))
 min_relu_acc = relu_state['test_accuracy'] - .01
 min_abs_acc = abs_state['test_accuracy'] - .01
