@@ -1,0 +1,1335 @@
+Pruning iteration 1
+Validation loss: 0.571198
+Validation loss: 0.573830
+Validation loss: 0.566956
+Test accuracy: 0.842900
+Sparsity in conv1 : 3.69%
+Sparsity in bn1 : 1.56%
+Sparsity in layer1.0.conv1 : 14.98%
+Sparsity in layer1.0.bn1 : 3.12%
+Sparsity in layer1.0.conv2 : 8.87%
+Sparsity in layer1.0.bn2 : 1.56%
+Sparsity in layer1.1.conv1 : 8.30%
+Sparsity in layer1.1.bn1 : 1.56%
+Sparsity in layer1.1.conv2 : 8.30%
+Sparsity in layer1.1.bn2 : 0.00%
+Sparsity in layer2.0.conv1 : 8.24%
+Sparsity in layer2.0.bn1 : 0.00%
+Sparsity in layer2.0.conv2 : 9.69%
+Sparsity in layer2.0.bn2 : 0.00%
+Sparsity in layer2.0.downsample.0 : 5.99%
+Sparsity in layer2.0.downsample.1 : 1.56%
+Sparsity in layer2.1.conv1 : 11.68%
+Sparsity in layer2.1.bn1 : 0.00%
+Sparsity in layer2.1.conv2 : 12.69%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 12.61%
+Sparsity in layer3.0.bn1 : 0.00%
+Sparsity in layer3.0.conv2 : 13.09%
+Sparsity in layer3.0.bn2 : 0.39%
+Sparsity in layer3.0.downsample.0 : 10.22%
+Sparsity in layer3.0.downsample.1 : 2.73%
+Sparsity in layer3.1.conv1 : 16.91%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 18.77%
+Sparsity in layer3.1.bn2 : 0.39%
+Sparsity in layer4.0.conv1 : 18.40%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 19.46%
+Sparsity in layer4.0.bn2 : 1.17%
+Sparsity in layer4.0.downsample.0 : 10.82%
+Sparsity in layer4.0.downsample.1 : 3.91%
+Sparsity in layer4.1.conv1 : 21.32%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 27.18%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 6.43%
+Pruning iteration 2
+Validation loss: 0.619923
+Validation loss: 0.545137
+Validation loss: 0.558122
+Test accuracy: 0.845300
+Sparsity in conv1 : 7.32%
+Sparsity in bn1 : 3.12%
+Sparsity in layer1.0.conv1 : 23.06%
+Sparsity in layer1.0.bn1 : 3.12%
+Sparsity in layer1.0.conv2 : 16.68%
+Sparsity in layer1.0.bn2 : 1.56%
+Sparsity in layer1.1.conv1 : 14.89%
+Sparsity in layer1.1.bn1 : 3.12%
+Sparsity in layer1.1.conv2 : 15.18%
+Sparsity in layer1.1.bn2 : 0.00%
+Sparsity in layer2.0.conv1 : 15.25%
+Sparsity in layer2.0.bn1 : 0.78%
+Sparsity in layer2.0.conv2 : 17.86%
+Sparsity in layer2.0.bn2 : 0.78%
+Sparsity in layer2.0.downsample.0 : 11.34%
+Sparsity in layer2.0.downsample.1 : 3.12%
+Sparsity in layer2.1.conv1 : 21.41%
+Sparsity in layer2.1.bn1 : 0.78%
+Sparsity in layer2.1.conv2 : 23.19%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 23.04%
+Sparsity in layer3.0.bn1 : 0.00%
+Sparsity in layer3.0.conv2 : 24.06%
+Sparsity in layer3.0.bn2 : 0.78%
+Sparsity in layer3.0.downsample.0 : 19.11%
+Sparsity in layer3.0.downsample.1 : 6.64%
+Sparsity in layer3.1.conv1 : 30.71%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 33.96%
+Sparsity in layer3.1.bn2 : 0.39%
+Sparsity in layer4.0.conv1 : 33.39%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 35.33%
+Sparsity in layer4.0.bn2 : 1.76%
+Sparsity in layer4.0.downsample.0 : 20.22%
+Sparsity in layer4.0.downsample.1 : 10.35%
+Sparsity in layer4.1.conv1 : 38.43%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 48.07%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 12.15%
+Pruning iteration 3
+Validation loss: 0.615651
+Validation loss: 0.573164
+Validation loss: 0.559681
+Test accuracy: 0.842600
+Sparsity in conv1 : 10.53%
+Sparsity in bn1 : 3.12%
+Sparsity in layer1.0.conv1 : 29.77%
+Sparsity in layer1.0.bn1 : 6.25%
+Sparsity in layer1.0.conv2 : 23.20%
+Sparsity in layer1.0.bn2 : 1.56%
+Sparsity in layer1.1.conv1 : 20.88%
+Sparsity in layer1.1.bn1 : 3.12%
+Sparsity in layer1.1.conv2 : 21.42%
+Sparsity in layer1.1.bn2 : 0.00%
+Sparsity in layer2.0.conv1 : 21.40%
+Sparsity in layer2.0.bn1 : 0.78%
+Sparsity in layer2.0.conv2 : 25.08%
+Sparsity in layer2.0.bn2 : 0.78%
+Sparsity in layer2.0.downsample.0 : 15.47%
+Sparsity in layer2.0.downsample.1 : 6.25%
+Sparsity in layer2.1.conv1 : 29.80%
+Sparsity in layer2.1.bn1 : 0.78%
+Sparsity in layer2.1.conv2 : 32.34%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 32.09%
+Sparsity in layer3.0.bn1 : 0.00%
+Sparsity in layer3.0.conv2 : 33.47%
+Sparsity in layer3.0.bn2 : 1.95%
+Sparsity in layer3.0.downsample.0 : 26.53%
+Sparsity in layer3.0.downsample.1 : 8.98%
+Sparsity in layer3.1.conv1 : 42.20%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 46.43%
+Sparsity in layer3.1.bn2 : 0.39%
+Sparsity in layer4.0.conv1 : 45.73%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 48.33%
+Sparsity in layer4.0.bn2 : 2.93%
+Sparsity in layer4.0.downsample.0 : 28.40%
+Sparsity in layer4.0.downsample.1 : 12.50%
+Sparsity in layer4.1.conv1 : 52.21%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 63.55%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 17.23%
+Pruning iteration 4
+Validation loss: 0.583249
+Validation loss: 0.570530
+Validation loss: 0.557316
+Test accuracy: 0.843800
+Sparsity in conv1 : 13.76%
+Sparsity in bn1 : 3.12%
+Sparsity in layer1.0.conv1 : 35.33%
+Sparsity in layer1.0.bn1 : 6.25%
+Sparsity in layer1.0.conv2 : 29.28%
+Sparsity in layer1.0.bn2 : 3.12%
+Sparsity in layer1.1.conv1 : 26.28%
+Sparsity in layer1.1.bn1 : 3.12%
+Sparsity in layer1.1.conv2 : 27.08%
+Sparsity in layer1.1.bn2 : 1.56%
+Sparsity in layer2.0.conv1 : 26.93%
+Sparsity in layer2.0.bn1 : 0.78%
+Sparsity in layer2.0.conv2 : 31.48%
+Sparsity in layer2.0.bn2 : 1.56%
+Sparsity in layer2.0.downsample.0 : 19.17%
+Sparsity in layer2.0.downsample.1 : 7.81%
+Sparsity in layer2.1.conv1 : 37.27%
+Sparsity in layer2.1.bn1 : 0.78%
+Sparsity in layer2.1.conv2 : 40.10%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 39.98%
+Sparsity in layer3.0.bn1 : 0.00%
+Sparsity in layer3.0.conv2 : 41.70%
+Sparsity in layer3.0.bn2 : 2.34%
+Sparsity in layer3.0.downsample.0 : 33.11%
+Sparsity in layer3.0.downsample.1 : 11.72%
+Sparsity in layer3.1.conv1 : 51.84%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 56.58%
+Sparsity in layer3.1.bn2 : 0.39%
+Sparsity in layer4.0.conv1 : 55.93%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 59.01%
+Sparsity in layer4.0.bn2 : 4.30%
+Sparsity in layer4.0.downsample.0 : 35.71%
+Sparsity in layer4.0.downsample.1 : 14.26%
+Sparsity in layer4.1.conv1 : 63.28%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 74.81%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 22.03%
+Pruning iteration 5
+Validation loss: 0.607925
+Validation loss: 0.580278
+Validation loss: 0.554829
+Test accuracy: 0.843500
+Sparsity in conv1 : 16.38%
+Sparsity in bn1 : 3.12%
+Sparsity in layer1.0.conv1 : 40.46%
+Sparsity in layer1.0.bn1 : 6.25%
+Sparsity in layer1.0.conv2 : 34.64%
+Sparsity in layer1.0.bn2 : 4.69%
+Sparsity in layer1.1.conv1 : 31.41%
+Sparsity in layer1.1.bn1 : 4.69%
+Sparsity in layer1.1.conv2 : 32.42%
+Sparsity in layer1.1.bn2 : 1.56%
+Sparsity in layer2.0.conv1 : 31.96%
+Sparsity in layer2.0.bn1 : 1.56%
+Sparsity in layer2.0.conv2 : 37.38%
+Sparsity in layer2.0.bn2 : 1.56%
+Sparsity in layer2.0.downsample.0 : 22.80%
+Sparsity in layer2.0.downsample.1 : 7.81%
+Sparsity in layer2.1.conv1 : 43.98%
+Sparsity in layer2.1.bn1 : 0.78%
+Sparsity in layer2.1.conv2 : 47.12%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 47.00%
+Sparsity in layer3.0.bn1 : 0.00%
+Sparsity in layer3.0.conv2 : 48.90%
+Sparsity in layer3.0.bn2 : 2.34%
+Sparsity in layer3.0.downsample.0 : 39.14%
+Sparsity in layer3.0.downsample.1 : 14.06%
+Sparsity in layer3.1.conv1 : 60.07%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 64.82%
+Sparsity in layer3.1.bn2 : 0.78%
+Sparsity in layer4.0.conv1 : 64.39%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 67.75%
+Sparsity in layer4.0.bn2 : 5.86%
+Sparsity in layer4.0.downsample.0 : 42.20%
+Sparsity in layer4.0.downsample.1 : 16.41%
+Sparsity in layer4.1.conv1 : 72.08%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 82.85%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 25.88%
+Pruning iteration 6
+Validation loss: 0.562267
+Validation loss: 0.563105
+Validation loss: 0.532821
+Test accuracy: 0.845900
+Sparsity in conv1 : 18.76%
+Sparsity in bn1 : 3.12%
+Sparsity in layer1.0.conv1 : 45.05%
+Sparsity in layer1.0.bn1 : 6.25%
+Sparsity in layer1.0.conv2 : 39.61%
+Sparsity in layer1.0.bn2 : 4.69%
+Sparsity in layer1.1.conv1 : 36.21%
+Sparsity in layer1.1.bn1 : 6.25%
+Sparsity in layer1.1.conv2 : 37.06%
+Sparsity in layer1.1.bn2 : 1.56%
+Sparsity in layer2.0.conv1 : 36.78%
+Sparsity in layer2.0.bn1 : 1.56%
+Sparsity in layer2.0.conv2 : 42.70%
+Sparsity in layer2.0.bn2 : 1.56%
+Sparsity in layer2.0.downsample.0 : 26.31%
+Sparsity in layer2.0.downsample.1 : 8.59%
+Sparsity in layer2.1.conv1 : 50.04%
+Sparsity in layer2.1.bn1 : 0.78%
+Sparsity in layer2.1.conv2 : 53.46%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 53.25%
+Sparsity in layer3.0.bn1 : 0.00%
+Sparsity in layer3.0.conv2 : 55.37%
+Sparsity in layer3.0.bn2 : 2.34%
+Sparsity in layer3.0.downsample.0 : 44.78%
+Sparsity in layer3.0.downsample.1 : 16.80%
+Sparsity in layer3.1.conv1 : 66.97%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 71.58%
+Sparsity in layer3.1.bn2 : 0.78%
+Sparsity in layer4.0.conv1 : 71.47%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 74.89%
+Sparsity in layer4.0.bn2 : 6.25%
+Sparsity in layer4.0.downsample.0 : 48.21%
+Sparsity in layer4.0.downsample.1 : 19.14%
+Sparsity in layer4.1.conv1 : 79.04%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 88.45%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 30.20%
+Pruning iteration 7
+Validation loss: 0.583266
+Validation loss: 0.571529
+Validation loss: 0.535905
+Test accuracy: 0.839800
+Sparsity in conv1 : 20.89%
+Sparsity in bn1 : 3.12%
+Sparsity in layer1.0.conv1 : 49.47%
+Sparsity in layer1.0.bn1 : 7.81%
+Sparsity in layer1.0.conv2 : 44.40%
+Sparsity in layer1.0.bn2 : 4.69%
+Sparsity in layer1.1.conv1 : 40.62%
+Sparsity in layer1.1.bn1 : 7.81%
+Sparsity in layer1.1.conv2 : 41.56%
+Sparsity in layer1.1.bn2 : 1.56%
+Sparsity in layer2.0.conv1 : 41.19%
+Sparsity in layer2.0.bn1 : 1.56%
+Sparsity in layer2.0.conv2 : 47.62%
+Sparsity in layer2.0.bn2 : 1.56%
+Sparsity in layer2.0.downsample.0 : 30.05%
+Sparsity in layer2.0.downsample.1 : 10.16%
+Sparsity in layer2.1.conv1 : 55.57%
+Sparsity in layer2.1.bn1 : 0.78%
+Sparsity in layer2.1.conv2 : 59.07%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 58.79%
+Sparsity in layer3.0.bn1 : 0.39%
+Sparsity in layer3.0.conv2 : 61.09%
+Sparsity in layer3.0.bn2 : 2.73%
+Sparsity in layer3.0.downsample.0 : 49.95%
+Sparsity in layer3.0.downsample.1 : 19.92%
+Sparsity in layer3.1.conv1 : 72.84%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 77.17%
+Sparsity in layer3.1.bn2 : 0.78%
+Sparsity in layer4.0.conv1 : 77.33%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 80.67%
+Sparsity in layer4.0.bn2 : 6.45%
+Sparsity in layer4.0.downsample.0 : 53.79%
+Sparsity in layer4.0.downsample.1 : 20.70%
+Sparsity in layer4.1.conv1 : 84.49%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 92.30%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 34.55%
+Pruning iteration 8
+Validation loss: 0.603095
+Validation loss: 0.527571
+Validation loss: 0.517123
+Test accuracy: 0.847100
+Sparsity in conv1 : 23.02%
+Sparsity in bn1 : 6.25%
+Sparsity in layer1.0.conv1 : 53.41%
+Sparsity in layer1.0.bn1 : 9.38%
+Sparsity in layer1.0.conv2 : 48.81%
+Sparsity in layer1.0.bn2 : 7.81%
+Sparsity in layer1.1.conv1 : 45.05%
+Sparsity in layer1.1.bn1 : 9.38%
+Sparsity in layer1.1.conv2 : 45.64%
+Sparsity in layer1.1.bn2 : 1.56%
+Sparsity in layer2.0.conv1 : 45.53%
+Sparsity in layer2.0.bn1 : 2.34%
+Sparsity in layer2.0.conv2 : 52.14%
+Sparsity in layer2.0.bn2 : 1.56%
+Sparsity in layer2.0.downsample.0 : 33.68%
+Sparsity in layer2.0.downsample.1 : 10.94%
+Sparsity in layer2.1.conv1 : 60.63%
+Sparsity in layer2.1.bn1 : 0.78%
+Sparsity in layer2.1.conv2 : 64.28%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 63.93%
+Sparsity in layer3.0.bn1 : 0.39%
+Sparsity in layer3.0.conv2 : 66.24%
+Sparsity in layer3.0.bn2 : 3.52%
+Sparsity in layer3.0.downsample.0 : 54.69%
+Sparsity in layer3.0.downsample.1 : 21.09%
+Sparsity in layer3.1.conv1 : 77.77%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 81.74%
+Sparsity in layer3.1.bn2 : 0.78%
+Sparsity in layer4.0.conv1 : 82.16%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 85.30%
+Sparsity in layer4.0.bn2 : 8.01%
+Sparsity in layer4.0.downsample.0 : 59.04%
+Sparsity in layer4.0.downsample.1 : 23.63%
+Sparsity in layer4.1.conv1 : 88.70%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 94.90%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 38.87%
+Pruning iteration 9
+Validation loss: 0.564938
+Validation loss: 0.515331
+Validation loss: 0.529854
+Test accuracy: 0.834100
+Sparsity in conv1 : 25.22%
+Sparsity in bn1 : 6.25%
+Sparsity in layer1.0.conv1 : 57.18%
+Sparsity in layer1.0.bn1 : 10.94%
+Sparsity in layer1.0.conv2 : 53.02%
+Sparsity in layer1.0.bn2 : 9.38%
+Sparsity in layer1.1.conv1 : 49.15%
+Sparsity in layer1.1.bn1 : 9.38%
+Sparsity in layer1.1.conv2 : 49.83%
+Sparsity in layer1.1.bn2 : 1.56%
+Sparsity in layer2.0.conv1 : 49.59%
+Sparsity in layer2.0.bn1 : 3.12%
+Sparsity in layer2.0.conv2 : 56.52%
+Sparsity in layer2.0.bn2 : 2.34%
+Sparsity in layer2.0.downsample.0 : 36.66%
+Sparsity in layer2.0.downsample.1 : 13.28%
+Sparsity in layer2.1.conv1 : 65.16%
+Sparsity in layer2.1.bn1 : 0.78%
+Sparsity in layer2.1.conv2 : 69.02%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 68.55%
+Sparsity in layer3.0.bn1 : 0.39%
+Sparsity in layer3.0.conv2 : 70.84%
+Sparsity in layer3.0.bn2 : 3.52%
+Sparsity in layer3.0.downsample.0 : 59.07%
+Sparsity in layer3.0.downsample.1 : 23.05%
+Sparsity in layer3.1.conv1 : 81.95%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 85.46%
+Sparsity in layer3.1.bn2 : 0.78%
+Sparsity in layer4.0.conv1 : 86.11%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 89.00%
+Sparsity in layer4.0.bn2 : 8.59%
+Sparsity in layer4.0.downsample.0 : 63.73%
+Sparsity in layer4.0.downsample.1 : 25.78%
+Sparsity in layer4.1.conv1 : 91.91%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 96.63%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 43.30%
+Pruning iteration 10
+Validation loss: 0.557827
+Validation loss: 0.514901
+Validation loss: 0.547641
+Test accuracy: 0.828300
+Sparsity in conv1 : 27.14%
+Sparsity in bn1 : 6.25%
+Sparsity in layer1.0.conv1 : 60.86%
+Sparsity in layer1.0.bn1 : 10.94%
+Sparsity in layer1.0.conv2 : 57.06%
+Sparsity in layer1.0.bn2 : 10.94%
+Sparsity in layer1.1.conv1 : 52.91%
+Sparsity in layer1.1.bn1 : 9.38%
+Sparsity in layer1.1.conv2 : 53.81%
+Sparsity in layer1.1.bn2 : 1.56%
+Sparsity in layer2.0.conv1 : 53.63%
+Sparsity in layer2.0.bn1 : 3.91%
+Sparsity in layer2.0.conv2 : 60.57%
+Sparsity in layer2.0.bn2 : 3.12%
+Sparsity in layer2.0.downsample.0 : 39.58%
+Sparsity in layer2.0.downsample.1 : 14.84%
+Sparsity in layer2.1.conv1 : 69.35%
+Sparsity in layer2.1.bn1 : 1.56%
+Sparsity in layer2.1.conv2 : 73.26%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 72.65%
+Sparsity in layer3.0.bn1 : 0.39%
+Sparsity in layer3.0.conv2 : 74.98%
+Sparsity in layer3.0.bn2 : 3.52%
+Sparsity in layer3.0.downsample.0 : 63.24%
+Sparsity in layer3.0.downsample.1 : 26.56%
+Sparsity in layer3.1.conv1 : 85.45%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 88.51%
+Sparsity in layer3.1.bn2 : 1.17%
+Sparsity in layer4.0.conv1 : 89.31%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 91.88%
+Sparsity in layer4.0.bn2 : 8.79%
+Sparsity in layer4.0.downsample.0 : 68.30%
+Sparsity in layer4.0.downsample.1 : 29.10%
+Sparsity in layer4.1.conv1 : 94.32%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 97.78%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 47.03%
+Pruning iteration 11
+Validation loss: 0.608527
+Validation loss: 0.522265
+Validation loss: 0.492710
+Test accuracy: 0.836500
+Sparsity in conv1 : 29.13%
+Sparsity in bn1 : 6.25%
+Sparsity in layer1.0.conv1 : 64.46%
+Sparsity in layer1.0.bn1 : 14.06%
+Sparsity in layer1.0.conv2 : 60.97%
+Sparsity in layer1.0.bn2 : 12.50%
+Sparsity in layer1.1.conv1 : 56.61%
+Sparsity in layer1.1.bn1 : 9.38%
+Sparsity in layer1.1.conv2 : 57.49%
+Sparsity in layer1.1.bn2 : 1.56%
+Sparsity in layer2.0.conv1 : 57.37%
+Sparsity in layer2.0.bn1 : 3.91%
+Sparsity in layer2.0.conv2 : 64.39%
+Sparsity in layer2.0.bn2 : 3.91%
+Sparsity in layer2.0.downsample.0 : 43.01%
+Sparsity in layer2.0.downsample.1 : 16.41%
+Sparsity in layer2.1.conv1 : 73.16%
+Sparsity in layer2.1.bn1 : 1.56%
+Sparsity in layer2.1.conv2 : 77.08%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 76.43%
+Sparsity in layer3.0.bn1 : 0.39%
+Sparsity in layer3.0.conv2 : 78.70%
+Sparsity in layer3.0.bn2 : 4.30%
+Sparsity in layer3.0.downsample.0 : 67.17%
+Sparsity in layer3.0.downsample.1 : 29.30%
+Sparsity in layer3.1.conv1 : 88.35%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 90.97%
+Sparsity in layer3.1.bn2 : 1.56%
+Sparsity in layer4.0.conv1 : 91.87%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 94.12%
+Sparsity in layer4.0.bn2 : 10.55%
+Sparsity in layer4.0.downsample.0 : 72.50%
+Sparsity in layer4.0.downsample.1 : 31.05%
+Sparsity in layer4.1.conv1 : 96.09%
+Sparsity in layer4.1.bn1 : 0.20%
+Sparsity in layer4.1.conv2 : 98.54%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 51.15%
+Pruning iteration 12
+Validation loss: 0.630625
+Validation loss: 0.526969
+Validation loss: 0.510633
+Test accuracy: 0.830100
+Sparsity in conv1 : 31.13%
+Sparsity in bn1 : 10.94%
+Sparsity in layer1.0.conv1 : 67.59%
+Sparsity in layer1.0.bn1 : 14.06%
+Sparsity in layer1.0.conv2 : 64.63%
+Sparsity in layer1.0.bn2 : 14.06%
+Sparsity in layer1.1.conv1 : 60.29%
+Sparsity in layer1.1.bn1 : 10.94%
+Sparsity in layer1.1.conv2 : 61.13%
+Sparsity in layer1.1.bn2 : 1.56%
+Sparsity in layer2.0.conv1 : 60.95%
+Sparsity in layer2.0.bn1 : 4.69%
+Sparsity in layer2.0.conv2 : 67.92%
+Sparsity in layer2.0.bn2 : 3.91%
+Sparsity in layer2.0.downsample.0 : 46.12%
+Sparsity in layer2.0.downsample.1 : 17.19%
+Sparsity in layer2.1.conv1 : 76.68%
+Sparsity in layer2.1.bn1 : 1.56%
+Sparsity in layer2.1.conv2 : 80.45%
+Sparsity in layer2.1.bn2 : 0.00%
+Sparsity in layer3.0.conv1 : 79.78%
+Sparsity in layer3.0.bn1 : 0.39%
+Sparsity in layer3.0.conv2 : 81.98%
+Sparsity in layer3.0.bn2 : 4.30%
+Sparsity in layer3.0.downsample.0 : 70.91%
+Sparsity in layer3.0.downsample.1 : 33.98%
+Sparsity in layer3.1.conv1 : 90.82%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 92.97%
+Sparsity in layer3.1.bn2 : 1.95%
+Sparsity in layer4.0.conv1 : 93.91%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 95.81%
+Sparsity in layer4.0.bn2 : 11.52%
+Sparsity in layer4.0.downsample.0 : 76.37%
+Sparsity in layer4.0.downsample.1 : 33.59%
+Sparsity in layer4.1.conv1 : 97.37%
+Sparsity in layer4.1.bn1 : 0.39%
+Sparsity in layer4.1.conv2 : 99.05%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 55.12%
+Pruning iteration 13
+Validation loss: 0.616919
+Validation loss: 0.560095
+Validation loss: 0.524318
+Test accuracy: 0.826700
+Sparsity in conv1 : 33.39%
+Sparsity in bn1 : 10.94%
+Sparsity in layer1.0.conv1 : 70.76%
+Sparsity in layer1.0.bn1 : 14.06%
+Sparsity in layer1.0.conv2 : 68.32%
+Sparsity in layer1.0.bn2 : 15.62%
+Sparsity in layer1.1.conv1 : 63.89%
+Sparsity in layer1.1.bn1 : 12.50%
+Sparsity in layer1.1.conv2 : 64.77%
+Sparsity in layer1.1.bn2 : 3.12%
+Sparsity in layer2.0.conv1 : 64.54%
+Sparsity in layer2.0.bn1 : 4.69%
+Sparsity in layer2.0.conv2 : 71.35%
+Sparsity in layer2.0.bn2 : 3.91%
+Sparsity in layer2.0.downsample.0 : 49.63%
+Sparsity in layer2.0.downsample.1 : 18.75%
+Sparsity in layer2.1.conv1 : 79.87%
+Sparsity in layer2.1.bn1 : 1.56%
+Sparsity in layer2.1.conv2 : 83.66%
+Sparsity in layer2.1.bn2 : 0.78%
+Sparsity in layer3.0.conv1 : 82.80%
+Sparsity in layer3.0.bn1 : 0.39%
+Sparsity in layer3.0.conv2 : 84.90%
+Sparsity in layer3.0.bn2 : 5.08%
+Sparsity in layer3.0.downsample.0 : 74.12%
+Sparsity in layer3.0.downsample.1 : 36.33%
+Sparsity in layer3.1.conv1 : 92.83%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 94.58%
+Sparsity in layer3.1.bn2 : 2.34%
+Sparsity in layer4.0.conv1 : 95.51%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 97.06%
+Sparsity in layer4.0.bn2 : 12.30%
+Sparsity in layer4.0.downsample.0 : 79.88%
+Sparsity in layer4.0.downsample.1 : 35.94%
+Sparsity in layer4.1.conv1 : 98.27%
+Sparsity in layer4.1.bn1 : 0.39%
+Sparsity in layer4.1.conv2 : 99.37%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 58.96%
+Pruning iteration 14
+Validation loss: 0.589612
+Validation loss: 0.548655
+Validation loss: 0.522268
+Test accuracy: 0.823700
+Sparsity in conv1 : 35.65%
+Sparsity in bn1 : 10.94%
+Sparsity in layer1.0.conv1 : 73.72%
+Sparsity in layer1.0.bn1 : 14.06%
+Sparsity in layer1.0.conv2 : 71.47%
+Sparsity in layer1.0.bn2 : 17.19%
+Sparsity in layer1.1.conv1 : 67.23%
+Sparsity in layer1.1.bn1 : 12.50%
+Sparsity in layer1.1.conv2 : 68.19%
+Sparsity in layer1.1.bn2 : 3.12%
+Sparsity in layer2.0.conv1 : 68.00%
+Sparsity in layer2.0.bn1 : 4.69%
+Sparsity in layer2.0.conv2 : 74.65%
+Sparsity in layer2.0.bn2 : 4.69%
+Sparsity in layer2.0.downsample.0 : 52.98%
+Sparsity in layer2.0.downsample.1 : 20.31%
+Sparsity in layer2.1.conv1 : 82.81%
+Sparsity in layer2.1.bn1 : 1.56%
+Sparsity in layer2.1.conv2 : 86.37%
+Sparsity in layer2.1.bn2 : 0.78%
+Sparsity in layer3.0.conv1 : 85.53%
+Sparsity in layer3.0.bn1 : 0.39%
+Sparsity in layer3.0.conv2 : 87.47%
+Sparsity in layer3.0.bn2 : 5.08%
+Sparsity in layer3.0.downsample.0 : 77.13%
+Sparsity in layer3.0.downsample.1 : 37.11%
+Sparsity in layer3.1.conv1 : 94.45%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 95.88%
+Sparsity in layer3.1.bn2 : 2.73%
+Sparsity in layer4.0.conv1 : 96.75%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 97.99%
+Sparsity in layer4.0.bn2 : 14.45%
+Sparsity in layer4.0.downsample.0 : 83.19%
+Sparsity in layer4.0.downsample.1 : 38.67%
+Sparsity in layer4.1.conv1 : 98.88%
+Sparsity in layer4.1.bn1 : 0.39%
+Sparsity in layer4.1.conv2 : 99.59%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 63.40%
+Pruning iteration 15
+Validation loss: 0.826699
+Validation loss: 0.553127
+Validation loss: 0.536972
+Test accuracy: 0.817400
+Sparsity in conv1 : 37.84%
+Sparsity in bn1 : 10.94%
+Sparsity in layer1.0.conv1 : 76.37%
+Sparsity in layer1.0.bn1 : 14.06%
+Sparsity in layer1.0.conv2 : 74.65%
+Sparsity in layer1.0.bn2 : 18.75%
+Sparsity in layer1.1.conv1 : 70.64%
+Sparsity in layer1.1.bn1 : 12.50%
+Sparsity in layer1.1.conv2 : 71.47%
+Sparsity in layer1.1.bn2 : 4.69%
+Sparsity in layer2.0.conv1 : 71.23%
+Sparsity in layer2.0.bn1 : 6.25%
+Sparsity in layer2.0.conv2 : 77.73%
+Sparsity in layer2.0.bn2 : 6.25%
+Sparsity in layer2.0.downsample.0 : 56.13%
+Sparsity in layer2.0.downsample.1 : 21.88%
+Sparsity in layer2.1.conv1 : 85.41%
+Sparsity in layer2.1.bn1 : 2.34%
+Sparsity in layer2.1.conv2 : 88.85%
+Sparsity in layer2.1.bn2 : 1.56%
+Sparsity in layer3.0.conv1 : 87.92%
+Sparsity in layer3.0.bn1 : 0.39%
+Sparsity in layer3.0.conv2 : 89.72%
+Sparsity in layer3.0.bn2 : 5.08%
+Sparsity in layer3.0.downsample.0 : 80.08%
+Sparsity in layer3.0.downsample.1 : 39.84%
+Sparsity in layer3.1.conv1 : 95.75%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 96.92%
+Sparsity in layer3.1.bn2 : 2.73%
+Sparsity in layer4.0.conv1 : 97.70%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 98.65%
+Sparsity in layer4.0.bn2 : 15.62%
+Sparsity in layer4.0.downsample.0 : 86.15%
+Sparsity in layer4.0.downsample.1 : 39.26%
+Sparsity in layer4.1.conv1 : 99.29%
+Sparsity in layer4.1.bn1 : 0.39%
+Sparsity in layer4.1.conv2 : 99.73%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 66.95%
+Pruning iteration 16
+Validation loss: 0.656035
+Validation loss: 0.577753
+Validation loss: 0.556835
+Test accuracy: 0.810200
+Sparsity in conv1 : 40.24%
+Sparsity in bn1 : 10.94%
+Sparsity in layer1.0.conv1 : 79.10%
+Sparsity in layer1.0.bn1 : 15.62%
+Sparsity in layer1.0.conv2 : 77.63%
+Sparsity in layer1.0.bn2 : 18.75%
+Sparsity in layer1.1.conv1 : 73.79%
+Sparsity in layer1.1.bn1 : 14.06%
+Sparsity in layer1.1.conv2 : 74.63%
+Sparsity in layer1.1.bn2 : 7.81%
+Sparsity in layer2.0.conv1 : 74.46%
+Sparsity in layer2.0.bn1 : 7.03%
+Sparsity in layer2.0.conv2 : 80.58%
+Sparsity in layer2.0.bn2 : 6.25%
+Sparsity in layer2.0.downsample.0 : 59.59%
+Sparsity in layer2.0.downsample.1 : 25.00%
+Sparsity in layer2.1.conv1 : 87.74%
+Sparsity in layer2.1.bn1 : 2.34%
+Sparsity in layer2.1.conv2 : 90.97%
+Sparsity in layer2.1.bn2 : 1.56%
+Sparsity in layer3.0.conv1 : 90.07%
+Sparsity in layer3.0.bn1 : 0.78%
+Sparsity in layer3.0.conv2 : 91.69%
+Sparsity in layer3.0.bn2 : 5.86%
+Sparsity in layer3.0.downsample.0 : 82.66%
+Sparsity in layer3.0.downsample.1 : 42.19%
+Sparsity in layer3.1.conv1 : 96.79%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 97.73%
+Sparsity in layer3.1.bn2 : 3.52%
+Sparsity in layer4.0.conv1 : 98.38%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.10%
+Sparsity in layer4.0.bn2 : 16.80%
+Sparsity in layer4.0.downsample.0 : 88.80%
+Sparsity in layer4.0.downsample.1 : 41.02%
+Sparsity in layer4.1.conv1 : 99.55%
+Sparsity in layer4.1.bn1 : 0.39%
+Sparsity in layer4.1.conv2 : 99.82%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 70.35%
+Pruning iteration 17
+Validation loss: 0.677513
+Validation loss: 0.639860
+Validation loss: 0.585414
+Test accuracy: 0.800100
+Sparsity in conv1 : 42.33%
+Sparsity in bn1 : 10.94%
+Sparsity in layer1.0.conv1 : 81.49%
+Sparsity in layer1.0.bn1 : 17.19%
+Sparsity in layer1.0.conv2 : 80.28%
+Sparsity in layer1.0.bn2 : 20.31%
+Sparsity in layer1.1.conv1 : 76.76%
+Sparsity in layer1.1.bn1 : 15.62%
+Sparsity in layer1.1.conv2 : 77.67%
+Sparsity in layer1.1.bn2 : 7.81%
+Sparsity in layer2.0.conv1 : 77.53%
+Sparsity in layer2.0.bn1 : 7.81%
+Sparsity in layer2.0.conv2 : 83.18%
+Sparsity in layer2.0.bn2 : 7.81%
+Sparsity in layer2.0.downsample.0 : 63.44%
+Sparsity in layer2.0.downsample.1 : 25.78%
+Sparsity in layer2.1.conv1 : 89.89%
+Sparsity in layer2.1.bn1 : 3.12%
+Sparsity in layer2.1.conv2 : 92.78%
+Sparsity in layer2.1.bn2 : 1.56%
+Sparsity in layer3.0.conv1 : 91.91%
+Sparsity in layer3.0.bn1 : 1.56%
+Sparsity in layer3.0.conv2 : 93.35%
+Sparsity in layer3.0.bn2 : 6.25%
+Sparsity in layer3.0.downsample.0 : 85.40%
+Sparsity in layer3.0.downsample.1 : 45.70%
+Sparsity in layer3.1.conv1 : 97.59%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 98.33%
+Sparsity in layer3.1.bn2 : 3.91%
+Sparsity in layer4.0.conv1 : 98.88%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.41%
+Sparsity in layer4.0.bn2 : 19.34%
+Sparsity in layer4.0.downsample.0 : 91.13%
+Sparsity in layer4.0.downsample.1 : 42.77%
+Sparsity in layer4.1.conv1 : 99.73%
+Sparsity in layer4.1.bn1 : 0.59%
+Sparsity in layer4.1.conv2 : 99.88%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 73.98%
+Pruning iteration 18
+Validation loss: 0.680199
+Validation loss: 0.658134
+Validation loss: 0.612207
+Test accuracy: 0.795700
+Sparsity in conv1 : 44.73%
+Sparsity in bn1 : 10.94%
+Sparsity in layer1.0.conv1 : 83.91%
+Sparsity in layer1.0.bn1 : 17.19%
+Sparsity in layer1.0.conv2 : 82.76%
+Sparsity in layer1.0.bn2 : 20.31%
+Sparsity in layer1.1.conv1 : 79.60%
+Sparsity in layer1.1.bn1 : 15.62%
+Sparsity in layer1.1.conv2 : 80.41%
+Sparsity in layer1.1.bn2 : 7.81%
+Sparsity in layer2.0.conv1 : 80.45%
+Sparsity in layer2.0.bn1 : 8.59%
+Sparsity in layer2.0.conv2 : 85.58%
+Sparsity in layer2.0.bn2 : 8.59%
+Sparsity in layer2.0.downsample.0 : 66.69%
+Sparsity in layer2.0.downsample.1 : 28.91%
+Sparsity in layer2.1.conv1 : 91.70%
+Sparsity in layer2.1.bn1 : 3.12%
+Sparsity in layer2.1.conv2 : 94.32%
+Sparsity in layer2.1.bn2 : 1.56%
+Sparsity in layer3.0.conv1 : 93.46%
+Sparsity in layer3.0.bn1 : 1.95%
+Sparsity in layer3.0.conv2 : 94.77%
+Sparsity in layer3.0.bn2 : 6.25%
+Sparsity in layer3.0.downsample.0 : 87.60%
+Sparsity in layer3.0.downsample.1 : 48.05%
+Sparsity in layer3.1.conv1 : 98.22%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 98.78%
+Sparsity in layer3.1.bn2 : 4.69%
+Sparsity in layer4.0.conv1 : 99.24%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.62%
+Sparsity in layer4.0.bn2 : 20.51%
+Sparsity in layer4.0.downsample.0 : 93.14%
+Sparsity in layer4.0.downsample.1 : 45.70%
+Sparsity in layer4.1.conv1 : 99.83%
+Sparsity in layer4.1.bn1 : 0.59%
+Sparsity in layer4.1.conv2 : 99.92%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 77.64%
+Pruning iteration 19
+Validation loss: 0.731615
+Validation loss: 0.637974
+Validation loss: 0.631688
+Test accuracy: 0.787600
+Sparsity in conv1 : 47.33%
+Sparsity in bn1 : 10.94%
+Sparsity in layer1.0.conv1 : 86.12%
+Sparsity in layer1.0.bn1 : 20.31%
+Sparsity in layer1.0.conv2 : 85.24%
+Sparsity in layer1.0.bn2 : 29.69%
+Sparsity in layer1.1.conv1 : 82.30%
+Sparsity in layer1.1.bn1 : 17.19%
+Sparsity in layer1.1.conv2 : 82.98%
+Sparsity in layer1.1.bn2 : 7.81%
+Sparsity in layer2.0.conv1 : 83.08%
+Sparsity in layer2.0.bn1 : 9.38%
+Sparsity in layer2.0.conv2 : 87.72%
+Sparsity in layer2.0.bn2 : 8.59%
+Sparsity in layer2.0.downsample.0 : 69.91%
+Sparsity in layer2.0.downsample.1 : 30.47%
+Sparsity in layer2.1.conv1 : 93.29%
+Sparsity in layer2.1.bn1 : 3.12%
+Sparsity in layer2.1.conv2 : 95.63%
+Sparsity in layer2.1.bn2 : 2.34%
+Sparsity in layer3.0.conv1 : 94.79%
+Sparsity in layer3.0.bn1 : 1.95%
+Sparsity in layer3.0.conv2 : 95.91%
+Sparsity in layer3.0.bn2 : 7.81%
+Sparsity in layer3.0.downsample.0 : 89.76%
+Sparsity in layer3.0.downsample.1 : 51.17%
+Sparsity in layer3.1.conv1 : 98.70%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 99.12%
+Sparsity in layer3.1.bn2 : 5.47%
+Sparsity in layer4.0.conv1 : 99.48%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.75%
+Sparsity in layer4.0.bn2 : 23.05%
+Sparsity in layer4.0.downsample.0 : 94.80%
+Sparsity in layer4.0.downsample.1 : 46.68%
+Sparsity in layer4.1.conv1 : 99.90%
+Sparsity in layer4.1.bn1 : 0.59%
+Sparsity in layer4.1.conv2 : 99.95%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 80.74%
+Pruning iteration 20
+Validation loss: 0.747117
+Validation loss: 0.689950
+Validation loss: 0.664543
+Test accuracy: 0.773100
+Sparsity in conv1 : 50.05%
+Sparsity in bn1 : 12.50%
+Sparsity in layer1.0.conv1 : 87.95%
+Sparsity in layer1.0.bn1 : 20.31%
+Sparsity in layer1.0.conv2 : 87.45%
+Sparsity in layer1.0.bn2 : 31.25%
+Sparsity in layer1.1.conv1 : 84.71%
+Sparsity in layer1.1.bn1 : 17.19%
+Sparsity in layer1.1.conv2 : 85.36%
+Sparsity in layer1.1.bn2 : 7.81%
+Sparsity in layer2.0.conv1 : 85.42%
+Sparsity in layer2.0.bn1 : 9.38%
+Sparsity in layer2.0.conv2 : 89.63%
+Sparsity in layer2.0.bn2 : 9.38%
+Sparsity in layer2.0.downsample.0 : 73.13%
+Sparsity in layer2.0.downsample.1 : 32.81%
+Sparsity in layer2.1.conv1 : 94.59%
+Sparsity in layer2.1.bn1 : 3.91%
+Sparsity in layer2.1.conv2 : 96.65%
+Sparsity in layer2.1.bn2 : 3.12%
+Sparsity in layer3.0.conv1 : 95.91%
+Sparsity in layer3.0.bn1 : 2.34%
+Sparsity in layer3.0.conv2 : 96.86%
+Sparsity in layer3.0.bn2 : 8.20%
+Sparsity in layer3.0.downsample.0 : 91.55%
+Sparsity in layer3.0.downsample.1 : 51.95%
+Sparsity in layer3.1.conv1 : 99.06%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 99.37%
+Sparsity in layer3.1.bn2 : 6.64%
+Sparsity in layer4.0.conv1 : 99.65%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.84%
+Sparsity in layer4.0.bn2 : 25.20%
+Sparsity in layer4.0.downsample.0 : 96.08%
+Sparsity in layer4.0.downsample.1 : 48.63%
+Sparsity in layer4.1.conv1 : 99.94%
+Sparsity in layer4.1.bn1 : 0.59%
+Sparsity in layer4.1.conv2 : 99.97%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 84.34%
+Pruning iteration 21
+Validation loss: 0.786007
+Validation loss: 0.765912
+Validation loss: 0.715429
+Test accuracy: 0.753800
+Sparsity in conv1 : 52.65%
+Sparsity in bn1 : 12.50%
+Sparsity in layer1.0.conv1 : 89.71%
+Sparsity in layer1.0.bn1 : 23.44%
+Sparsity in layer1.0.conv2 : 89.42%
+Sparsity in layer1.0.bn2 : 34.38%
+Sparsity in layer1.1.conv1 : 86.92%
+Sparsity in layer1.1.bn1 : 20.31%
+Sparsity in layer1.1.conv2 : 87.47%
+Sparsity in layer1.1.bn2 : 7.81%
+Sparsity in layer2.0.conv1 : 87.70%
+Sparsity in layer2.0.bn1 : 10.16%
+Sparsity in layer2.0.conv2 : 91.41%
+Sparsity in layer2.0.bn2 : 11.72%
+Sparsity in layer2.0.downsample.0 : 76.04%
+Sparsity in layer2.0.downsample.1 : 35.94%
+Sparsity in layer2.1.conv1 : 95.68%
+Sparsity in layer2.1.bn1 : 3.91%
+Sparsity in layer2.1.conv2 : 97.49%
+Sparsity in layer2.1.bn2 : 3.12%
+Sparsity in layer3.0.conv1 : 96.84%
+Sparsity in layer3.0.bn1 : 3.12%
+Sparsity in layer3.0.conv2 : 97.59%
+Sparsity in layer3.0.bn2 : 9.38%
+Sparsity in layer3.0.downsample.0 : 93.11%
+Sparsity in layer3.0.downsample.1 : 53.52%
+Sparsity in layer3.1.conv1 : 99.32%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 99.55%
+Sparsity in layer3.1.bn2 : 7.42%
+Sparsity in layer4.0.conv1 : 99.76%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.89%
+Sparsity in layer4.0.bn2 : 27.73%
+Sparsity in layer4.0.downsample.0 : 97.11%
+Sparsity in layer4.0.downsample.1 : 51.95%
+Sparsity in layer4.1.conv1 : 99.96%
+Sparsity in layer4.1.bn1 : 0.98%
+Sparsity in layer4.1.conv2 : 99.98%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 87.07%
+Pruning iteration 22
+Validation loss: 1.837893
+Validation loss: 0.766428
+Validation loss: 0.742501
+Test accuracy: 0.747800
+Sparsity in conv1 : 55.42%
+Sparsity in bn1 : 17.19%
+Sparsity in layer1.0.conv1 : 91.24%
+Sparsity in layer1.0.bn1 : 26.56%
+Sparsity in layer1.0.conv2 : 91.14%
+Sparsity in layer1.0.bn2 : 39.06%
+Sparsity in layer1.1.conv1 : 88.89%
+Sparsity in layer1.1.bn1 : 20.31%
+Sparsity in layer1.1.conv2 : 89.34%
+Sparsity in layer1.1.bn2 : 7.81%
+Sparsity in layer2.0.conv1 : 89.63%
+Sparsity in layer2.0.bn1 : 11.72%
+Sparsity in layer2.0.conv2 : 92.94%
+Sparsity in layer2.0.bn2 : 11.72%
+Sparsity in layer2.0.downsample.0 : 79.05%
+Sparsity in layer2.0.downsample.1 : 36.72%
+Sparsity in layer2.1.conv1 : 96.62%
+Sparsity in layer2.1.bn1 : 4.69%
+Sparsity in layer2.1.conv2 : 98.12%
+Sparsity in layer2.1.bn2 : 3.12%
+Sparsity in layer3.0.conv1 : 97.55%
+Sparsity in layer3.0.bn1 : 3.52%
+Sparsity in layer3.0.conv2 : 98.20%
+Sparsity in layer3.0.bn2 : 10.94%
+Sparsity in layer3.0.downsample.0 : 94.47%
+Sparsity in layer3.0.downsample.1 : 55.47%
+Sparsity in layer3.1.conv1 : 99.51%
+Sparsity in layer3.1.bn1 : 0.00%
+Sparsity in layer3.1.conv2 : 99.68%
+Sparsity in layer3.1.bn2 : 8.20%
+Sparsity in layer4.0.conv1 : 99.84%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.93%
+Sparsity in layer4.0.bn2 : 31.45%
+Sparsity in layer4.0.downsample.0 : 97.89%
+Sparsity in layer4.0.downsample.1 : 54.30%
+Sparsity in layer4.1.conv1 : 99.97%
+Sparsity in layer4.1.bn1 : 0.98%
+Sparsity in layer4.1.conv2 : 99.98%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 89.82%
+Pruning iteration 23
+Validation loss: 0.823906
+Validation loss: 0.783864
+Validation loss: 0.772513
+Test accuracy: 0.736600
+Sparsity in conv1 : 58.61%
+Sparsity in bn1 : 18.75%
+Sparsity in layer1.0.conv1 : 92.64%
+Sparsity in layer1.0.bn1 : 28.12%
+Sparsity in layer1.0.conv2 : 92.66%
+Sparsity in layer1.0.bn2 : 39.06%
+Sparsity in layer1.1.conv1 : 90.70%
+Sparsity in layer1.1.bn1 : 25.00%
+Sparsity in layer1.1.conv2 : 91.02%
+Sparsity in layer1.1.bn2 : 7.81%
+Sparsity in layer2.0.conv1 : 91.50%
+Sparsity in layer2.0.bn1 : 12.50%
+Sparsity in layer2.0.conv2 : 94.26%
+Sparsity in layer2.0.bn2 : 14.84%
+Sparsity in layer2.0.downsample.0 : 81.71%
+Sparsity in layer2.0.downsample.1 : 37.50%
+Sparsity in layer2.1.conv1 : 97.35%
+Sparsity in layer2.1.bn1 : 4.69%
+Sparsity in layer2.1.conv2 : 98.57%
+Sparsity in layer2.1.bn2 : 5.47%
+Sparsity in layer3.0.conv1 : 98.11%
+Sparsity in layer3.0.bn1 : 3.91%
+Sparsity in layer3.0.conv2 : 98.67%
+Sparsity in layer3.0.bn2 : 12.50%
+Sparsity in layer3.0.downsample.0 : 95.58%
+Sparsity in layer3.0.downsample.1 : 59.38%
+Sparsity in layer3.1.conv1 : 99.65%
+Sparsity in layer3.1.bn1 : 0.39%
+Sparsity in layer3.1.conv2 : 99.77%
+Sparsity in layer3.1.bn2 : 8.59%
+Sparsity in layer4.0.conv1 : 99.90%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.95%
+Sparsity in layer4.0.bn2 : 34.57%
+Sparsity in layer4.0.downsample.0 : 98.47%
+Sparsity in layer4.0.downsample.1 : 56.25%
+Sparsity in layer4.1.conv1 : 99.98%
+Sparsity in layer4.1.bn1 : 0.98%
+Sparsity in layer4.1.conv2 : 99.99%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 92.05%
+Pruning iteration 24
+Validation loss: 0.875275
+Validation loss: 0.897912
+Validation loss: 0.867048
+Test accuracy: 0.709300
+Sparsity in conv1 : 61.66%
+Sparsity in bn1 : 20.31%
+Sparsity in layer1.0.conv1 : 93.81%
+Sparsity in layer1.0.bn1 : 34.38%
+Sparsity in layer1.0.conv2 : 93.99%
+Sparsity in layer1.0.bn2 : 40.62%
+Sparsity in layer1.1.conv1 : 92.12%
+Sparsity in layer1.1.bn1 : 28.12%
+Sparsity in layer1.1.conv2 : 92.52%
+Sparsity in layer1.1.bn2 : 7.81%
+Sparsity in layer2.0.conv1 : 93.00%
+Sparsity in layer2.0.bn1 : 12.50%
+Sparsity in layer2.0.conv2 : 95.33%
+Sparsity in layer2.0.bn2 : 15.62%
+Sparsity in layer2.0.downsample.0 : 83.79%
+Sparsity in layer2.0.downsample.1 : 38.28%
+Sparsity in layer2.1.conv1 : 97.92%
+Sparsity in layer2.1.bn1 : 6.25%
+Sparsity in layer2.1.conv2 : 98.96%
+Sparsity in layer2.1.bn2 : 8.59%
+Sparsity in layer3.0.conv1 : 98.59%
+Sparsity in layer3.0.bn1 : 5.47%
+Sparsity in layer3.0.conv2 : 99.02%
+Sparsity in layer3.0.bn2 : 13.67%
+Sparsity in layer3.0.downsample.0 : 96.49%
+Sparsity in layer3.0.downsample.1 : 64.84%
+Sparsity in layer3.1.conv1 : 99.75%
+Sparsity in layer3.1.bn1 : 1.56%
+Sparsity in layer3.1.conv2 : 99.84%
+Sparsity in layer3.1.bn2 : 12.50%
+Sparsity in layer4.0.conv1 : 99.93%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.97%
+Sparsity in layer4.0.bn2 : 39.65%
+Sparsity in layer4.0.downsample.0 : 98.94%
+Sparsity in layer4.0.downsample.1 : 57.81%
+Sparsity in layer4.1.conv1 : 99.99%
+Sparsity in layer4.1.bn1 : 0.98%
+Sparsity in layer4.1.conv2 : 99.99%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 93.75%
+Pruning iteration 25
+Validation loss: 0.949330
+Validation loss: 0.880430
+Validation loss: 0.856361
+Test accuracy: 0.701800
+Sparsity in conv1 : 65.55%
+Sparsity in bn1 : 20.31%
+Sparsity in layer1.0.conv1 : 94.85%
+Sparsity in layer1.0.bn1 : 40.62%
+Sparsity in layer1.0.conv2 : 95.14%
+Sparsity in layer1.0.bn2 : 43.75%
+Sparsity in layer1.1.conv1 : 93.47%
+Sparsity in layer1.1.bn1 : 34.38%
+Sparsity in layer1.1.conv2 : 93.78%
+Sparsity in layer1.1.bn2 : 9.38%
+Sparsity in layer2.0.conv1 : 94.22%
+Sparsity in layer2.0.bn1 : 14.84%
+Sparsity in layer2.0.conv2 : 96.25%
+Sparsity in layer2.0.bn2 : 17.19%
+Sparsity in layer2.0.downsample.0 : 85.88%
+Sparsity in layer2.0.downsample.1 : 43.75%
+Sparsity in layer2.1.conv1 : 98.41%
+Sparsity in layer2.1.bn1 : 7.81%
+Sparsity in layer2.1.conv2 : 99.24%
+Sparsity in layer2.1.bn2 : 9.38%
+Sparsity in layer3.0.conv1 : 98.95%
+Sparsity in layer3.0.bn1 : 6.25%
+Sparsity in layer3.0.conv2 : 99.29%
+Sparsity in layer3.0.bn2 : 15.23%
+Sparsity in layer3.0.downsample.0 : 97.21%
+Sparsity in layer3.0.downsample.1 : 67.58%
+Sparsity in layer3.1.conv1 : 99.82%
+Sparsity in layer3.1.bn1 : 2.34%
+Sparsity in layer3.1.conv2 : 99.89%
+Sparsity in layer3.1.bn2 : 14.84%
+Sparsity in layer4.0.conv1 : 99.95%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.98%
+Sparsity in layer4.0.bn2 : 45.70%
+Sparsity in layer4.0.downsample.0 : 99.26%
+Sparsity in layer4.0.downsample.1 : 59.77%
+Sparsity in layer4.1.conv1 : 99.99%
+Sparsity in layer4.1.bn1 : 1.17%
+Sparsity in layer4.1.conv2 : 99.99%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 95.21%
+Pruning iteration 26
+Validation loss: 0.998267
+Validation loss: 0.975891
+Validation loss: 0.921835
+Test accuracy: 0.681200
+Sparsity in conv1 : 68.28%
+Sparsity in bn1 : 21.88%
+Sparsity in layer1.0.conv1 : 95.79%
+Sparsity in layer1.0.bn1 : 42.19%
+Sparsity in layer1.0.conv2 : 96.04%
+Sparsity in layer1.0.bn2 : 50.00%
+Sparsity in layer1.1.conv1 : 94.53%
+Sparsity in layer1.1.bn1 : 37.50%
+Sparsity in layer1.1.conv2 : 94.97%
+Sparsity in layer1.1.bn2 : 9.38%
+Sparsity in layer2.0.conv1 : 95.30%
+Sparsity in layer2.0.bn1 : 15.62%
+Sparsity in layer2.0.conv2 : 97.04%
+Sparsity in layer2.0.bn2 : 17.97%
+Sparsity in layer2.0.downsample.0 : 87.81%
+Sparsity in layer2.0.downsample.1 : 46.88%
+Sparsity in layer2.1.conv1 : 98.80%
+Sparsity in layer2.1.bn1 : 8.59%
+Sparsity in layer2.1.conv2 : 99.48%
+Sparsity in layer2.1.bn2 : 10.16%
+Sparsity in layer3.0.conv1 : 99.23%
+Sparsity in layer3.0.bn1 : 7.81%
+Sparsity in layer3.0.conv2 : 99.50%
+Sparsity in layer3.0.bn2 : 17.58%
+Sparsity in layer3.0.downsample.0 : 97.89%
+Sparsity in layer3.0.downsample.1 : 69.92%
+Sparsity in layer3.1.conv1 : 99.88%
+Sparsity in layer3.1.bn1 : 3.52%
+Sparsity in layer3.1.conv2 : 99.92%
+Sparsity in layer3.1.bn2 : 18.36%
+Sparsity in layer4.0.conv1 : 99.97%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.99%
+Sparsity in layer4.0.bn2 : 51.17%
+Sparsity in layer4.0.downsample.0 : 99.48%
+Sparsity in layer4.0.downsample.1 : 63.87%
+Sparsity in layer4.1.conv1 : 100.00%
+Sparsity in layer4.1.bn1 : 1.17%
+Sparsity in layer4.1.conv2 : 100.00%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 96.21%
+Pruning iteration 27
+Validation loss: 1.095390
+Validation loss: 1.026873
+Validation loss: 1.008623
+Test accuracy: 0.645000
+Sparsity in conv1 : 71.57%
+Sparsity in bn1 : 21.88%
+Sparsity in layer1.0.conv1 : 96.45%
+Sparsity in layer1.0.bn1 : 42.19%
+Sparsity in layer1.0.conv2 : 96.85%
+Sparsity in layer1.0.bn2 : 51.56%
+Sparsity in layer1.1.conv1 : 95.48%
+Sparsity in layer1.1.bn1 : 37.50%
+Sparsity in layer1.1.conv2 : 95.97%
+Sparsity in layer1.1.bn2 : 10.94%
+Sparsity in layer2.0.conv1 : 96.19%
+Sparsity in layer2.0.bn1 : 19.53%
+Sparsity in layer2.0.conv2 : 97.69%
+Sparsity in layer2.0.bn2 : 19.53%
+Sparsity in layer2.0.downsample.0 : 89.37%
+Sparsity in layer2.0.downsample.1 : 50.00%
+Sparsity in layer2.1.conv1 : 99.14%
+Sparsity in layer2.1.bn1 : 8.59%
+Sparsity in layer2.1.conv2 : 99.63%
+Sparsity in layer2.1.bn2 : 13.28%
+Sparsity in layer3.0.conv1 : 99.44%
+Sparsity in layer3.0.bn1 : 8.59%
+Sparsity in layer3.0.conv2 : 99.65%
+Sparsity in layer3.0.bn2 : 19.53%
+Sparsity in layer3.0.downsample.0 : 98.40%
+Sparsity in layer3.0.downsample.1 : 73.44%
+Sparsity in layer3.1.conv1 : 99.91%
+Sparsity in layer3.1.bn1 : 4.30%
+Sparsity in layer3.1.conv2 : 99.95%
+Sparsity in layer3.1.bn2 : 20.70%
+Sparsity in layer4.0.conv1 : 99.98%
+Sparsity in layer4.0.bn1 : 0.00%
+Sparsity in layer4.0.conv2 : 99.99%
+Sparsity in layer4.0.bn2 : 55.27%
+Sparsity in layer4.0.downsample.0 : 99.65%
+Sparsity in layer4.0.downsample.1 : 68.36%
+Sparsity in layer4.1.conv1 : 100.00%
+Sparsity in layer4.1.bn1 : 1.17%
+Sparsity in layer4.1.conv2 : 100.00%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 97.30%
+Pruning iteration 28
+Validation loss: 1.170068
+Validation loss: 1.135482
+Validation loss: 1.119020
+Test accuracy: 0.606100
+Sparsity in conv1 : 74.43%
+Sparsity in bn1 : 21.88%
+Sparsity in layer1.0.conv1 : 97.09%
+Sparsity in layer1.0.bn1 : 45.31%
+Sparsity in layer1.0.conv2 : 97.52%
+Sparsity in layer1.0.bn2 : 56.25%
+Sparsity in layer1.1.conv1 : 96.36%
+Sparsity in layer1.1.bn1 : 42.19%
+Sparsity in layer1.1.conv2 : 96.79%
+Sparsity in layer1.1.bn2 : 12.50%
+Sparsity in layer2.0.conv1 : 96.97%
+Sparsity in layer2.0.bn1 : 21.09%
+Sparsity in layer2.0.conv2 : 98.23%
+Sparsity in layer2.0.bn2 : 23.44%
+Sparsity in layer2.0.downsample.0 : 90.98%
+Sparsity in layer2.0.downsample.1 : 54.69%
+Sparsity in layer2.1.conv1 : 99.37%
+Sparsity in layer2.1.bn1 : 9.38%
+Sparsity in layer2.1.conv2 : 99.75%
+Sparsity in layer2.1.bn2 : 14.06%
+Sparsity in layer3.0.conv1 : 99.61%
+Sparsity in layer3.0.bn1 : 10.94%
+Sparsity in layer3.0.conv2 : 99.76%
+Sparsity in layer3.0.bn2 : 21.48%
+Sparsity in layer3.0.downsample.0 : 98.78%
+Sparsity in layer3.0.downsample.1 : 76.56%
+Sparsity in layer3.1.conv1 : 99.94%
+Sparsity in layer3.1.bn1 : 6.64%
+Sparsity in layer3.1.conv2 : 99.96%
+Sparsity in layer3.1.bn2 : 23.83%
+Sparsity in layer4.0.conv1 : 99.99%
+Sparsity in layer4.0.bn1 : 0.59%
+Sparsity in layer4.0.conv2 : 99.99%
+Sparsity in layer4.0.bn2 : 60.74%
+Sparsity in layer4.0.downsample.0 : 99.77%
+Sparsity in layer4.0.downsample.1 : 70.31%
+Sparsity in layer4.1.conv1 : 100.00%
+Sparsity in layer4.1.bn1 : 1.76%
+Sparsity in layer4.1.conv2 : 100.00%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 97.81%
+Pruning iteration 29
+Validation loss: 1.353239
+Validation loss: 1.307405
+Validation loss: 1.293687
+Test accuracy: 0.532800
+Sparsity in conv1 : 77.33%
+Sparsity in bn1 : 21.88%
+Sparsity in layer1.0.conv1 : 97.67%
+Sparsity in layer1.0.bn1 : 46.88%
+Sparsity in layer1.0.conv2 : 98.06%
+Sparsity in layer1.0.bn2 : 59.38%
+Sparsity in layer1.1.conv1 : 97.09%
+Sparsity in layer1.1.bn1 : 45.31%
+Sparsity in layer1.1.conv2 : 97.49%
+Sparsity in layer1.1.bn2 : 14.06%
+Sparsity in layer2.0.conv1 : 97.67%
+Sparsity in layer2.0.bn1 : 22.66%
+Sparsity in layer2.0.conv2 : 98.67%
+Sparsity in layer2.0.bn2 : 25.00%
+Sparsity in layer2.0.downsample.0 : 92.50%
+Sparsity in layer2.0.downsample.1 : 56.25%
+Sparsity in layer2.1.conv1 : 99.55%
+Sparsity in layer2.1.bn1 : 9.38%
+Sparsity in layer2.1.conv2 : 99.83%
+Sparsity in layer2.1.bn2 : 14.84%
+Sparsity in layer3.0.conv1 : 99.73%
+Sparsity in layer3.0.bn1 : 14.06%
+Sparsity in layer3.0.conv2 : 99.84%
+Sparsity in layer3.0.bn2 : 22.27%
+Sparsity in layer3.0.downsample.0 : 99.04%
+Sparsity in layer3.0.downsample.1 : 79.69%
+Sparsity in layer3.1.conv1 : 99.96%
+Sparsity in layer3.1.bn1 : 8.59%
+Sparsity in layer3.1.conv2 : 99.97%
+Sparsity in layer3.1.bn2 : 27.73%
+Sparsity in layer4.0.conv1 : 99.99%
+Sparsity in layer4.0.bn1 : 1.56%
+Sparsity in layer4.0.conv2 : 100.00%
+Sparsity in layer4.0.bn2 : 63.67%
+Sparsity in layer4.0.downsample.0 : 99.84%
+Sparsity in layer4.0.downsample.1 : 72.85%
+Sparsity in layer4.1.conv1 : 100.00%
+Sparsity in layer4.1.bn1 : 2.54%
+Sparsity in layer4.1.conv2 : 100.00%
+Sparsity in layer4.1.bn2 : 0.00%
+Sparsity in fc : 98.42%
+Under min accuracy!

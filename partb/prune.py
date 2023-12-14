@@ -1,8 +1,9 @@
+import torch
 import torch.nn.utils.prune as prune
 import torch.nn as nn
 import copy
 
-from shared import train, plot
+from shared import train, plot, custom_loss, accuracy
 
 
 def prune_model(device, model, state, data, prune_amt=0.03, iterations=5, min_acc=90):
@@ -10,16 +11,34 @@ def prune_model(device, model, state, data, prune_amt=0.03, iterations=5, min_ac
   state['test_losses'] = [state['test_losses'][-1]] # only want one value
   print("Min accuracy", min_acc)
   model.load_state_dict(state['net'])
+  print("Validation loss: %f" % custom_loss(model, device, nn.CrossEntropyLoss(), data['test']))
+
   for i in range(iterations):
     print("Pruning iteration", i+1)
-    l = [module for module in model.modules() if isinstance(module, nn.Conv2d) or isinstance(module, nn.BatchNorm2d)]
-    for module in l:
-        prune.l1_unstructured(module, name="weight", amount=prune_amt)
+    l = [(module, "weight") for module in model.modules() if isinstance(module, nn.Conv2d) or isinstance(module, nn.BatchNorm2d) or isinstance(module, nn.Linear)]
+    # for name, param in model.named_parameters():
+    #     print(name)
+
+    prune.global_unstructured(
+        l,
+        pruning_method=prune.L1Unstructured,
+        amount=0.2,
+    )
     state['epoch'] = 0
-    model.load_state_dict(state['net'])
-    state = train(model, device, data['train'], data['test'], epochs=2, lr=.02, gamma=.5, print_every=100)
+    #state = train(model, device, data['train'], data['test'], epochs=2, lr=.0005, gamma=.5, print_every=100)
     state['losses'] = state['losses'][:-2] # TODO won't have state data in the end due to not passing in
     state['test_losses'] = state['test_losses'][:-2]
+
+    a = accuracy(model, device, data['test'])
+    print(accuracy(model, device, data['train']))
+    print(a)
+    if a < .50:
+        break
+    # [print("Sparsity in " + name + " : {:.2f}%".format(
+    #         100. * float(torch.sum(module.weight == 0))
+    #         / float(module.weight.nelement())))
+    #     for (name, module) in model.named_modules() if
+    #     isinstance(module, nn.Conv2d) or isinstance(module, nn.BatchNorm2d) or isinstance(module, nn.Linear)]
     if state['test_accuracy'] < min_acc:
         print("Under min accuracy!")
         break
