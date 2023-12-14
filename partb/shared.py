@@ -40,8 +40,8 @@ def train(net, device, train_dataloader, val_dataloader, epochs=1, start_epoch=0
       print ("Learning rate: %f"% schedule[epoch])
       for g in optimizer.param_groups:
         g['lr'] = schedule[epoch]
-    for i, batch in enumerate(train_dataloader, 0):
-        inputs, labels = batch[0].to(device), batch[1].to(device)
+    for i, (inputs, labels) in enumerate(train_dataloader, 0):
+        inputs, labels = inputs.to(device), labels.to(device)
         #print(i)
         optimizer.zero_grad()
 
@@ -58,7 +58,7 @@ def train(net, device, train_dataloader, val_dataloader, epochs=1, start_epoch=0
 
         if i % print_every == print_every-1:    # print every 10 mini-batches
             if verbose:
-              print('[%d, %5d] loss: %.3f' % (epoch, i + 1, print_sum_loss / print_amt_losses))
+              print('[%d, %5d] loss: %.5f' % (epoch, i + 1, print_sum_loss / print_amt_losses))
             print_sum_loss = 0.0
             print_amt_losses = 0
     losses.append(sum_loss/amt_losses)
