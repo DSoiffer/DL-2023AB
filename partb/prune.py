@@ -15,6 +15,8 @@ def prune_model(device, model, state, data, prune_amt=0.03, iterations=5, min_ac
 
   for i in range(iterations):
     print("Pruning iteration", i+1)
+    # Prune convolutional and fully connected/linear layers.
+    # We do not prune BatchNorm, as that does not make sense to do by magnitude.
     l = [(module, "weight") for module in model.modules() if
          isinstance(module, nn.Conv2d) or isinstance(module, nn.Linear)]
     l2 = [(module, "bias") for module in model.modules() if

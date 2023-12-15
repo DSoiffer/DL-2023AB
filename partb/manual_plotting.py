@@ -59,14 +59,14 @@ plot(plotDictLoss, "Pruning/Tuning (20% per iteration, 3 epochs)", "../res/part_
 
 
 
-absSparsitiesFile = open('../res/part_b/resnet18/cifar10/aaa.txt', 'r')
+absSparsitiesFile = open('../res/part_b/resnet18/cifar10/absSparsities_20p2e.txt', 'r')
 lines = absSparsitiesFile.readlines()
 sparsitiesAbs = []
 for line in lines:
     parts = line.strip().split(' ')
     sparsitiesAbs.append(float(parts[4].replace('%', '')))
 
-reluSparsitiesFile = open('../res/part_b/resnet18/cifar10/bbb.txt', 'r')
+reluSparsitiesFile = open('../res/part_b/resnet18/cifar10/reluSparsities_20p2e.txt', 'r')
 lines = reluSparsitiesFile.readlines()
 sparsitiesRelu = []
 for line in lines:
